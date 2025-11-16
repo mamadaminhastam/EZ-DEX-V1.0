@@ -1,0 +1,141 @@
+@import url("colors.css");
+
+/* بک‌گراند */
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 40px;
+    background: var(--color-surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.brand img {
+    height: 28px;
+    width: 28px;
+    object-fit: contain;
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--color-text-muted);
+    transition: 0.3s;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Layout اصلی */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 60px auto 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* کارت لیکوئیدیتی */
+.liquidity-card {
+    background: var(--color-surface);
+    padding: 25px;
+    border-radius: 14px;
+    width: 340px;
+    border: 1px solid var(--color-border);
+}
+
+.liquidity-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* لیست جفت‌ها */
+.pair-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+}
+
+.add-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: var(--color-secondary);
+}
+
+/* بخش راهنما */
+.guide {
+    max-width: 350px;
+    text-align: center;
+}
+
+.guide img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
+.guide-text {
+    margin-top: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+/* دکمه ثبت‌نام کنار لوگو */
+.register-btn {
+    margin-right: 15px;
+    padding: 6px 14px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: var(--color-secondary);
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ DEX - Swap</title>
+
+    
+    <link rel="stylesheet" href="swap.css">
+</head>
+<body>
+
+<header class="navbar">
+   <div class="brand">
+    <img src="images/ChatGPT Image Oct 31, 2025, 01_24_02 PM.png" alt="EZ DEX Logo">
+    <span>EZ DEX</span>
+
+    <!-- دکمه ثبت‌نام کنار لوگو -->
+    <a href="register.html" class="register-btn">Register</a>
+</div>
+
+    <nav>
+        <a class="active" href="#">Swap</a>
+        <a href="liquidity.html">Liquidity</a>
+        <a href="staking.html">Staking</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="swap-card">
+        <h2>Swap Tokens</h2>
+
+        <div class="swap-input">
+            <div class="input-left">
+                <label>From</label>
+                <input type="number" placeholder="0.0">
+            </div>
+            <select class="token-select">
+                <option>ETH</option>
+                <option>USDT</option>
+                <option>WBTC</option>
+            </select>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="swap-input">
+            <div class="input-left">
+                <label>To</label>
+                <input type="number" placeholder="0.0">
+            </div>
+            <select class="token-select">
+                <option>USDT</option>
+                <option>ETH</option>
+                <option>WETH</option>
+            </select>
+        </div>
+
+        <button class="swap-btn">Swap</button>
+    </div>
+
+       <div class="guide">
+     <video id="swapVideo" src="videos/video5818867519921855741.mp4"></video>
+     <p class="guide-text">
+         در این بخش می‌تونی به راحتی توکن‌هات رو به هم تبدیل کنی...
+         برای دیدن اموزش بزن رو عکس:)
+     </p>
+    </div>
+    <script>
+    const video = document.getElementById('swapVideo');
+
+    video.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+</script>
+
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+@import url("colors.css");
+
+/* بک‌گراند */
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 40px;
+    background: var(--color-surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.brand img {
+    height: 28px;
+    width: 28px;
+    object-fit: contain;
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--color-text-muted);
+    transition: 0.3s;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Layout اصلی */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 60px auto 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* کارت سواپ */
+.swap-card {
+    background: var(--color-surface);
+    padding: 25px;
+    border-radius: 14px;
+    width: 340px;
+    border: 1px solid var(--color-border);
+}
+
+.swap-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Inputs */
+.swap-input {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.swap-input input {
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    font-size: 18px;
+    margin-top: 3px;
+    outline: none;
+}
+
+/* Token Dropdown Style */
+.token-select {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: var(--color-text);
+    outline: none;
+    cursor: pointer;
+}
+
+.token-select:hover {
+    border-color: var(--color-primary);
+}
+
+/* Arrow */
+.arrow {
+    text-align: center;
+    margin: 10px 0;
+    color: var(--color-text-muted);
+    font-size: 20px;
+}
+
+/* Swap Button */
+.swap-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.swap-btn:hover {
+    background: var(--color-secondary);
+}
+
+/* بخش راهنما */
+.guide {
+    max-width: 350px;
+    text-align: center;
+}
+
+.guide img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+}
+
+.guide-text {
+    margin-top: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+/* Video inside guide */
+.guide video {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    object-fit: cover;
+    height: 100%;
+    max-height: 260px; /* اگر دلخواه داری می‌تونی حذف یا تغییر بدی */
+}
+/* دکمه ثبت‌نام کنار لوگو */
+.register-btn {
+    margin-right: 15px;
+    padding: 6px 14px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: var(--color-secondary);
+}
