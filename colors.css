@@ -1,18 +1,33 @@
- :root {
- --color-primary: #3B82F6;       /* رنگ اصلی برند (دکمه‌ها، لینک‌ها) */
-  --color-on-primary: #FFFFFF;    /* رنگ متن روی رنگ اصلی */
+:root {
+ --color-primary: #3B82F6;
+ --color-on-primary: #FFFFFF;
+ --color-secondary: #4338CA;
+ --color-accent: #06B6D4;
+ --color-background: #0B0E11;
+ --color-surface: #111418;
+ --color-text: #E5E7EB;
+ --color-text-muted: #9CA3AF;
+ --color-border: rgba(59,130,246,0.15);
+ --color-purple-fade: rgba(109, 40, 217,0.25);
+}
 
-  /* رنگ‌های مکمل و اکسانت */
-  --color-secondary: #4338CA;     /* رنگ مکمل برای hover یا جزئیات */
-  --color-accent: #06B6D4;        /* رنگ درخشان برای افکت‌ها */
+/* کلاس primary filled برای تکلیف */
+.btn-primary-filled {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
 
-  /* رنگ‌های پس‌زمینه و سطوح */
-  --color-background: #0B0E11;    /* پس‌زمینه کلی سایت */
-  --color-surface: #111418;       /* سطح کارت‌ها یا فرم‌ها */
-
-  /* رنگ‌های متن و خطوط */
-  --color-text: #E5E7EB;          /* رنگ متن اصلی */
-  --color-text-muted: #9CA3AF;    /* متن کم‌رنگ‌تر */
-  --color-border: rgba(59,130,246,0.15); /* رنگ مرزها و جداکننده‌ها */
-  --color-purple-fade: rgba(109, 40, 217, 0.25);
- }
+.btn-primary-filled:hover {
+  background: var(--color-secondary);
+}
