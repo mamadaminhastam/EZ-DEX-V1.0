@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ DEX - Swap</title>
 
-    
+    <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="swap.css">
 </head>
 <body>
 
 <header class="navbar">
-   <div class="brand">
-    <img src="images/ChatGPT Image Oct 31, 2025, 01_24_02 PM.png" alt="EZ DEX Logo">
-    <span>EZ DEX</span>
+    <div class="brand">
+        <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
+        <span>EZ DEX</span>
 
-    <!-- دکمه ثبت‌نام کنار لوگو -->
-    <a href="register.html" class="register-btn">Register</a>
-</div>
+        <!-- دکمه ثبت نام بر اساس دکمه جدید -->
+        <a href="register.html" class="btn-primary-sm">Register</a>
+    </div>
 
     <nav>
         <a class="active" href="#">Swap</a>
@@ -31,6 +31,7 @@
     <div class="swap-card">
         <h2>Swap Tokens</h2>
 
+        <!-- Input 1 -->
         <div class="swap-input">
             <div class="input-left">
                 <label>From</label>
@@ -43,8 +44,10 @@
             </select>
         </div>
 
+        <!-- Arrow -->
         <div class="arrow">↓</div>
 
+        <!-- Input 2 -->
         <div class="swap-input">
             <div class="input-left">
                 <label>To</label>
@@ -57,30 +60,27 @@
             </select>
         </div>
 
-        <button class="swap-btn">Swap</button>
+        <!-- دکمه اصلی سواپ با کلاس جدید -->
+        <button class="btn-primary-sm swap-btn-standard">Swap</button>
     </div>
 
-       <div class="guide">
-     <video id="swapVideo" src="videos/video5818867519921855741.mp4"></video>
-     <p class="guide-text">
-         در این بخش می‌تونی به راحتی توکن‌هات رو به هم تبدیل کنی...
-         برای دیدن اموزش بزن رو عکس:)
-     </p>
+    <!-- ویدیو آموزشی -->
+    <div class="guide">
+        <video id="swapVideo" src="main/Theme/videos/swap.mp4"></video>
+        <p class="guide-text">
+            در این بخش می‌تونی به راحتی توکن‌هات رو تبدیل کنی...
+            روی ویدیو کلیک کن :
+        </p>
     </div>
-    <script>
-    const video = document.getElementById('swapVideo');
-
-    video.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
-    });
-</script>
-
 
 </main>
+
+<script>
+    const video = document.getElementById('swapVideo');
+    video.addEventListener('click', () => {
+        video.paused ? video.play() : video.pause();
+    });
+</script>
 
 </body>
 </html>

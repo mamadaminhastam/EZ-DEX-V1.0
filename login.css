@@ -14,7 +14,7 @@ body {
     position: relative;
 }
 
-/* دکمه کلاس مشترک با liquidity */
+/* کلاس دکمه‌ی مشترک (هماهنگ با liquidity/staking/register) */
 .btn-primary-sm {
     padding: 6px 12px;
     border-radius: 8px;
@@ -38,7 +38,7 @@ body {
     text-align: center;
 }
 
-/* دکمه بازگشت – در گوشه بالا چپ */
+/* دکمه بازگشت */
 .back-btn {
     position: absolute;
     left: 20px;
@@ -64,7 +64,7 @@ body {
 }
 
 /* کانتینر فرم */
-.register-container {
+.login-container {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: 30px;
@@ -104,17 +104,51 @@ input:focus {
     border-color: var(--color-primary);
 }
 
-/* لینک ورود */
-.login-link {
+/* سطر بین remember و forgot */
+.row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+/* چک‌باکس و متن remember */
+.remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* لینک فراموشی رمز */
+.forgot {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot:hover {
+    color: var(--color-secondary);
+}
+
+/* لینک ثبت نام */
+.register-link {
     text-align: center;
     margin-top: 15px;
 }
 
-.login-link a {
+.register-link a {
     color: var(--color-primary);
     text-decoration: none;
 }
 
-.login-link a:hover {
+.register-link a:hover {
     color: var(--color-secondary);
 }

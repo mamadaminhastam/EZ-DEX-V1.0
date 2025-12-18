@@ -1,56 +1,17 @@
-@import url("colors.css");
+@import url("main/main.css");
 
-/* بک‌گراند */
+/* بک‌گراند اصلی */
 body {
     background: var(--color-background);
     color: var(--color-text);
-    font-family: sans-serif;
-    min-height: 100vh;
+    
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
-/* Navbar */
-.navbar {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 40px;
-    background: var(--color-surface);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-border);
-}
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-primary);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.brand img {
-    height: 28px;
-    width: 28px;
-    object-fit: contain;
-}
-
-.navbar nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--color-text-muted);
-    transition: 0.3s;
-}
-
-.navbar nav a.active,
-.navbar nav a:hover {
-    color: var(--color-primary);
-}
-
-/* Layout اصلی */
+/* Layout کلی */
 .container {
     display: flex;
     justify-content: center;
@@ -61,7 +22,7 @@ body {
     padding: 0 20px;
 }
 
-/* کارت سواپ */
+/* Swap Card */
 .swap-card {
     background: var(--color-surface);
     padding: 25px;
@@ -75,7 +36,7 @@ body {
     text-align: center;
 }
 
-/* Inputs */
+/* Swap Inputs */
 .swap-input {
     background: var(--color-background);
     border: 1px solid var(--color-border);
@@ -101,15 +62,15 @@ body {
     outline: none;
 }
 
-/* Token Dropdown Style */
+/* Token Dropdown */
 .token-select {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: 8px 10px;
     border-radius: 8px;
     color: var(--color-text);
-    outline: none;
     cursor: pointer;
+    outline: none;
 }
 
 .token-select:hover {
@@ -124,62 +85,28 @@ body {
     font-size: 20px;
 }
 
-/* Swap Button */
-.swap-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
+/* Swap Button (نسخه استاندارد) */
+.swap-btn-standard {
+    width: 100%; /* فقط تفاوت با دکمه معمولی */
+    margin-top: 10px;
 }
 
-.swap-btn:hover {
-    background: var(--color-secondary);
-}
-
-/* بخش راهنما */
+/* Guide Section */
 .guide {
     max-width: 350px;
     text-align: center;
 }
 
-.guide img {
+.guide video {
     width: 100%;
     border-radius: 10px;
     border: 1px solid var(--color-border);
+    object-fit: cover;
+    max-height: 260px;
 }
 
 .guide-text {
     margin-top: 15px;
     color: var(--color-text-muted);
     line-height: 1.6;
-}
-/* Video inside guide */
-.guide video {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
-    object-fit: cover;
-    height: 100%;
-    max-height: 260px; /* اگر دلخواه داری می‌تونی حذف یا تغییر بدی */
-}
-/* دکمه ثبت‌نام کنار لوگو */
-.register-btn {
-    margin-right: 15px;
-    padding: 6px 14px;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.register-btn:hover {
-    background: var(--color-secondary);
 }

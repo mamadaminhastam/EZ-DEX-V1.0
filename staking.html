@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ DEX - Staking</title>
 
+    <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="staking.css">
 </head>
 <body>
 
 <header class="navbar">
-<div class="brand">
-    <img src="images/ChatGPT Image Oct 31, 2025, 01_24_02 PM.png" alt="EZ DEX Logo">
-    <span>EZ DEX</span>
+  <div class="brand">
+      <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
+      <span>EZ DEX</span>
 
-    <!-- دکمه ثبت‌نام کنار لوگو -->
-    <a href="register.html" class="register-btn">Register</a>
-</div>
+      <!-- دکمه ثبت‌نام: حالا مثل liquidity از کلاس btn-primary-sm استفاده شده -->
+      <a href="register.html" class="btn-primary-sm">Register</a>
+  </div>
 
-    <nav>
-        <a href="swap.html">Swap</a>
-        <a href="liquidity.html">Liquidity</a>
-        <a class="active" href="#">Staking</a>
-    </nav>
+  <nav>
+      <a href="swap.html">Swap</a>
+      <a href="liquidity.html">Liquidity</a>
+      <a class="active" href="#">Staking</a>
+  </nav>
 </header>
 
 <main class="container">
@@ -30,22 +31,43 @@
     <div class="stake-card">
         <h2>Staking</h2>
 
+        <!-- Balance Box -->
         <div class="balance-box">
-            <span>Available Margin To Stake  </span>
+            <span>Available Margin To Stake</span>
             <strong>0 EZD</strong>
         </div>
 
+        <!-- Stake Input -->
         <div class="stake-input">
-            <label>Stake amount </label>
+            <label>Stake amount</label>
             <input type="number" placeholder="0.0">
         </div>
 
-        <button class="stake-btn">Stake</button>
+        <!-- دکمه‌ها با اندازه‌ی مشابه liquidity -->
+        <button class="btn-primary-sm">Stake</button>
 
         <hr class="divider">
 
         <h3>Unstake</h3>
 
         <div class="stake-input">
-            <label> Amount of unstake</label>
-            <input type="number" placeh>
+            <label>Amount to Unstake</label>
+            <input type="number" placeholder="0.0">
+        </div>
+
+        <button class="btn-primary-sm">Unstake</button>
+
+    </div>
+
+    <!-- در صورت تمایل می‌توانید قسمت راهنما (guide) را اضافه کنید تا layout دقیقاً مثل صفحه‌ی liquidity شود -->
+    <div class="guide">
+        <img src="main/Theme/images/stake.jpg" alt="Staking Guide">
+        <div class="guide-text">
+            استیک کردن یعنی شما توکن هاتون رو قفل می‌کنید تا پاداش دریافت کنید — در ازای قفل کردن، پاداش‌ها و قوانین مربوطه اعمال می‌شود.
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

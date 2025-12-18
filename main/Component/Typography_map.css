@@ -1,0 +1,62 @@
+/* ===== Typography Global Mapping ===== */
+
+
+/* پایه کل سایت */
+body {
+    font-family: Vazirmatn, sans-serif;
+    font-size: var(--md-sys-typescale-body-medium-size);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
+    font-weight: var(--md-sys-typescale-body-medium-weight);
+    letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+}
+
+/* پاراگراف */
+p {
+    font-size: var(--md-sys-typescale-body-medium-size);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+/* لینک‌ها */
+a {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* تیترها */
+h1 {
+    font-size: var(--md-sys-typescale-display-large-size);
+    line-height: var(--md-sys-typescale-display-large-line-height);
+    font-weight: var(--md-sys-typescale-display-large-weight);
+    font-family: var(--md-sys-typescale-display-large-font);
+}
+
+h2 {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    line-height: var(--md-sys-typescale-headline-medium-line-height);
+    font-weight: var(--md-sys-typescale-headline-medium-weight);
+}
+
+h3 {
+    font-size: var(--md-sys-typescale-headline-small-size);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
+}
+
+h4 {
+    font-size: var(--md-sys-typescale-title-large-size);
+}
+
+h5 {
+    font-size: var(--md-sys-typescale-title-medium-size);
+}
+
+h6 {
+    font-size: var(--md-sys-typescale-title-small-size);
+}
+
+/* دکمه‌ها */
+button,
+.btn-primary-sm {
+    font-size: var(--md-sys-typescale-label-large-size);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
+}

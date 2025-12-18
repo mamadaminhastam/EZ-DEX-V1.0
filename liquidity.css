@@ -1,4 +1,4 @@
-@import url("colors.css");
+@import url("main/main.css");
 
 /* بک‌گراند */
 body {
@@ -10,45 +10,7 @@ body {
     padding: 0;
 }
 
-/* Navbar */
-.navbar {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 40px;
-    background: var(--color-surface);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-border);
-}
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-primary);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.brand img {
-    height: 28px;
-    width: 28px;
-    object-fit: contain;
-}
-
-.navbar nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--color-text-muted);
-    transition: 0.3s;
-}
-
-.navbar nav a.active,
-.navbar nav a:hover {
-    color: var(--color-primary);
-}
 
 /* Layout اصلی */
 .container {

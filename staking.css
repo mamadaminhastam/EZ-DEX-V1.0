@@ -1,10 +1,11 @@
-@import url("colors.css");
+@import url("main/main.css");
 
 /* بک‌گراند */
 body {
     background: var(--color-background);
     color: var(--color-text);
     font-family: sans-serif;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -49,7 +50,7 @@ body {
     color: var(--color-primary);
 }
 
-/* Layout */
+/* Layout اصلی: هم‌راستا با liquidity */
 .container {
     display: flex;
     justify-content: center;
@@ -60,11 +61,11 @@ body {
     padding: 0 20px;
 }
 
-/* Stake Card */
+/* Stake Card: اندازه‌ها و padding مشابه liquidity-card */
 .stake-card {
     background: var(--color-surface);
     padding: 25px;
-    width: 340px;
+    width: 340px;               /* همان عرض در liquidity */
     border-radius: 14px;
     border: 1px solid var(--color-border);
 }
@@ -107,39 +108,6 @@ body {
     outline: none;
 }
 
-/* Buttons */
-.stake-btn,
-.unstake-btn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-/* Stake */
-.stake-btn {
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-}
-
-.stake-btn:hover {
-    background: var(--color-secondary);
-}
-
-/* Unstake */
-.unstake-btn {
-    background: var(--color-accent);
-    color: var(--color-on-primary);
-}
-
-.unstake-btn:hover {
-    background: var(--color-primary);
-}
-
 /* Divider */
 .divider {
     border: none;
@@ -147,7 +115,30 @@ body {
     margin: 20px 0;
 }
 
-/* Guide Section */
+/* دکمه‌های هم‌شکل با liquidity (اندازه کوچک) */
+.btn-primary-sm {
+    padding: 6px 12px;           /* همان padding که در liquidity برای add-btn بود */
+    border-radius: 8px;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-primary-sm:hover {
+    background: var(--color-secondary);
+}
+
+/* اگر دکمه‌ها نیاز به سبک دیگری داشتند (مثلاً full-width) می‌توانید کلاس اضافی اضافه کنید. */
+
+/* Guide Section (در صورت استفاده) */
 .guide {
     max-width: 350px;
     text-align: center;
@@ -163,19 +154,4 @@ body {
     margin-top: 15px;
     color: var(--color-text-muted);
     line-height: 1.6;
-}
-/* دکمه ثبت‌نام کنار لوگو */
-.register-btn {
-    margin-right: 15px;
-    padding: 6px 14px;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.register-btn:hover {
-    background: var(--color-secondary);
 }
