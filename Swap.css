@@ -9,7 +9,6 @@ body {
     min-height: 100vh;
 }
 
-
 /* Layout کلی */
 .container {
     display: flex;
@@ -19,6 +18,7 @@ body {
     margin: 60px auto 0 auto;
     max-width: 1200px;
     padding: 0 20px;
+    flex-wrap: wrap; /* برای موبایل */
 }
 
 /* Swap Card */
@@ -28,6 +28,7 @@ body {
     border-radius: 14px;
     width: 340px;
     border: 1px solid var(--color-border);
+    flex-shrink: 0;
 }
 
 .swap-card h2 {
@@ -84,9 +85,9 @@ body {
     font-size: 20px;
 }
 
-/* Swap Button (نسخه استاندارد) */
+/* Swap Button */
 .swap-btn-standard {
-    width: 100%; /* فقط تفاوت با دکمه معمولی */
+    width: 100%;
     margin-top: 10px;
 }
 
@@ -94,6 +95,7 @@ body {
 .guide {
     max-width: 350px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .guide video {
@@ -110,3 +112,29 @@ body {
     line-height: 1.6;
 }
 
+/* Recent Transactions Table */
+.recent-transactions {
+    flex: 1;
+    min-width: 360px;
+}
+
+.recent-transactions h2 {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* استفاده از کامپوننت جدول متریال */
+.recent-transactions table {
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .swap-card, .recent-transactions {
+        width: 100%;
+    }
+}

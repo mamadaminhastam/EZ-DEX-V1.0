@@ -4,8 +4,8 @@
 @import url(Component/Typography.css);
 
 @import url(Component/Typography_map.css);
-@import url(Component/card.css);
-
+@import url(Component/buttons.css);
+@import url(Component/table.css);
 
 /* ========== Navbar (Global Component) ========== */
 

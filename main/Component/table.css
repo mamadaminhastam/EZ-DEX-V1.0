@@ -1,0 +1,66 @@
+
+/* جدول متریال */
+.material-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.material-table thead {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.material-table th, .material-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Hover روی ردیف */
+.material-table tbody tr:hover {
+    background: var(--color-purple-fade);
+    cursor: pointer;
+}
+
+/* ستون Thumbnail */
+.material-table img.thumbnail {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* وضعیت تراکنش */
+.status {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.status.pending { background: #FBBF24; color: #1F2937; }
+.status.completed { background: #10B981; color: #FFFFFF; }
+
+/* دکمه داخل جدول */
+.material-table button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.material-table button:hover {
+    background: var(--color-secondary);
+}

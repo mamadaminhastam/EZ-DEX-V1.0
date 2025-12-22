@@ -13,23 +13,6 @@ body {
     position: relative;
 }
 
-/* دکمه کلاس مشترک با liquidity */
-.btn-primary-sm {
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 14px;
-}
-
-.btn-primary-sm:hover {
-    background: var(--color-secondary);
-}
 
 .full-width {
     width: 100%;

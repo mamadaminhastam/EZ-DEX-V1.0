@@ -37,7 +37,12 @@ button,
 .btn-outlined:hover {
     background-color: var(--color-primary-hover-bg); /* کمی رنگ پس‌زمینه برای هاور */
 }
-
+/* ========= Text Button ========= */
+/* Tonal */
+.btn.tonal {
+  background: #050158; /* secondary-container */
+  color: white;
+}
 /* ========= Text Button ========= */
 .btn-text {
     background-color: transparent;

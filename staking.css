@@ -115,25 +115,7 @@ body {
 }
 
 /* دکمه‌های هم‌شکل با liquidity (اندازه کوچک) */
-.btn-primary-sm {
-    padding: 6px 12px;           /* همان padding که در liquidity برای add-btn بود */
-    border-radius: 8px;
-    border: none;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 14px;
-}
 
-.btn-primary-sm:hover {
-    background: var(--color-secondary);
-}
 
 /* اگر دکمه‌ها نیاز به سبک دیگری داشتند (مثلاً full-width) می‌توانید کلاس اضافی اضافه کنید. */
 
