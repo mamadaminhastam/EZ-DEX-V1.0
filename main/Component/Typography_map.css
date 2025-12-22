@@ -27,7 +27,7 @@ h1 {
     font-size: var(--md-sys-typescale-display-large-size);
     line-height: var(--md-sys-typescale-display-large-line-height);
     font-weight: var(--md-sys-typescale-display-large-weight);
-    
+    font-family: var(--md-sys-typescale-display-large-font);
 }
 
 h2 {
@@ -60,4 +60,3 @@ button,
     font-weight: var(--md-sys-typescale-label-large-weight);
     letter-spacing: var(--md-sys-typescale-label-large-tracking);
 }
-

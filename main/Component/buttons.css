@@ -1,0 +1,111 @@
+/* ===== Global Buttons ===== */
+button,
+.btn {
+    font-family: Vazirmatn, sans-serif; /* از تایپوگرافی استفاده می‌کنیم */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* فاصله آیکون و متن */
+    text-decoration: none;
+}
+
+/* ========= Filled Button ========= */
+.btn-filled {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.btn-filled:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* ========= Outlined Button ========= */
+.btn-outlined {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.btn-outlined:hover {
+    background-color: var(--color-primary-hover-bg); /* کمی رنگ پس‌زمینه برای هاور */
+}
+
+/* ========= Text Button ========= */
+.btn-text {
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+.btn-text:hover {
+    background-color: var(--color-primary-hover-bg-light);
+}
+
+/* ========= Sizes ========= */
+.btn-small {
+    padding: 6px 12px;
+    font-size: var(--md-sys-typescale-label-small-size);
+}
+
+.btn-medium {
+    padding: 10px 20px;
+    font-size: var(--md-sys-typescale-label-medium-size);
+}
+
+.btn-large {
+    padding: 14px 28px;
+    font-size: var(--md-sys-typescale-label-large-size);
+}
+.btn-primary-filled {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.btn-primary-filled:hover {
+  background: var(--color-secondary);
+}
+/* Primary Filled Button — Small */
+.btn-primary-sm {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+
+  padding: 6px 14px;   /* کوچک */
+  border-radius: 8px;
+  border: none;
+
+  font-size: 14px;  
+  font-weight: 600;   
+  line-height: 1.4;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-primary-sm:hover {
+  background: var(--color-secondary);
+}

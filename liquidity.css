@@ -1,103 +1,100 @@
 @import url("main/main.css");
-
-/* بک‌گراند */
 body {
     background: var(--color-background);
     color: var(--color-text);
     min-height: 100vh;
     margin: 0;
-    padding: 0;
 }
-
-
-
-/* Layout اصلی */
+/* Layout */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    margin: 60px auto 0 auto;
     max-width: 1200px;
+    margin: 60px auto;
     padding: 0 20px;
-}
-
-/* کارت لیکوئیدیتی */
-.liquidity-card {
-    background: var(--color-surface);
-    padding: 25px;
-    border-radius: 14px;
-    width: 340px;
-    border: 1px solid var(--color-border);
-}
-
-.liquidity-card h2 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* لیست جفت‌ها */
-.pair-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 60px;
 }
 
-.pair {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 12px;
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-}
-
-.add-btn {
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.add-btn:hover {
-    background: var(--color-secondary);
-}
-
-/* بخش راهنما */
+/* Guide */
 .guide {
-    max-width: 350px;
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .guide img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid var(--color-border);
 }
 
 .guide-text {
-    margin-top: 15px;
+    margin-top: 18px;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
 }
-/* دکمه ثبت‌نام کنار لوگو */
-.register-btn {
-    margin-right: 15px;
-    padding: 6px 14px;
-    background: var(--color-primary);
-    color: var(--color-on-primary);
-    border-radius: 8px;
-    text-decoration: none;
+
+/* Section */
+.liquidity-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Grid */
+.pair-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Liquidity Card */
+.liquidity-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pair-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.apr {
     font-size: 14px;
-    transition: 0.3s;
+    color: var(--color-success);
+    font-weight: 600;
 }
 
-.register-btn:hover {
-    background: var(--color-secondary);
+/* Stats */
+.card-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
 
+.card-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.value {
+    font-weight: 600;
+}
+
+/* Button */
+.btn-primary-sm.full {
+    width: 100%;
+    margin-top: 8px;
+}
