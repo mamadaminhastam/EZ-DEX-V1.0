@@ -27,8 +27,24 @@
         0 4px 12px rgba(0, 0, 0, 0.6),
         0 0 0 1px rgba(255, 255, 255, 0.02);
 }
-
-.card:hover {
+.card.is-hover:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
+.card.is-focus:focus,
+.card.is-focus:focus-within {
+    outline: none;
+    box-shadow:
+        0 0 0 2px var(--color-primary),
+        0 6px 16px rgba(0, 0, 0, 0.6);
+}
+.card.is-active:active {
+    transform: scale(0.98);
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.6);
+}
+.card.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
