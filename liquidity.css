@@ -16,23 +16,32 @@ body {
 }
 
 /* Guide */
-.guide {
-    max-width: 600px;
+/* Info Card */
+.info-card {
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
+    padding: 7px 10px;
 }
 
-.guide img {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
+.info-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.guide-text {
-    margin-top: 18px;
+.info-content img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.info-content p {
+    margin: 0;
     color: var(--color-text-muted);
-    line-height: 1.7;
+    line-height: 1.6;
+    font-size: 14px;
 }
+
 
 /* Section */
 .liquidity-section h2 {
@@ -43,8 +52,9 @@ body {
 /* Grid */
 .pair-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin-top: 24px;
 }
 
 /* Liquidity Card */
