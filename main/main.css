@@ -7,7 +7,7 @@
 @import url(Component/buttons.css);
 @import url(Component/table.css);
 @import url(Component/shape.css);
-
+@import url(Component/badge.css);
 /* ========== Navbar (Global Component) ========== */
 
 .navbar {
@@ -38,7 +38,7 @@
     font-weight: bold;
 }
 
-.navbar .brand img {
+.navbar .brand  {
     height: 28px;
     width: 28px;
 }
@@ -60,4 +60,9 @@
 .navbar nav a:hover,
 .navbar nav a.active {
     color: var(--color-primary);
+}
+.brand img {
+    height: 53px;
+    width: 53px;
+    object-fit: contain;
 }

@@ -1,0 +1,55 @@
+/* Badge Component */
+
+/* کانتینر برای اینکه بج بتواند گوشه آن قرار بگیرد (Positioning Context) */
+.badge-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* استایل پایه نشان */
+.badge {
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    background-color: var(--color-surface); /* رنگ قرمز هشدار/توجه */
+    color:var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+    animation: badgePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- Variant: Large (برای شمارنده) --- */
+.badge-lg {
+    min-width: 18px;
+    height: 18px;
+    padding: 2px 5px;
+    font-size: 11px;
+    border-radius: 10px; /* برای اعداد دو رقمی بیضی شود */
+}
+
+/* --- Variant: Small (برای وضعیت/نقطه) --- */
+
+.badge-sm {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    display: inline-block;
+    flex-shrink: 0; /* مانع از تغییر سایز بج در فضاهای کم می‌شود */
+    
+    /* حذف پوزیشن‌های اضافی برای جلوگیری از تداخل */
+    position: static; 
+    margin: 0; 
+}
+
+/* انیمیشن باز شدن */
+@keyframes badgePop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}

@@ -1,4 +1,6 @@
 @import url("main/main.css");
+/* اگر badge.css را در main ایمپورت نکردی، همینجا ایمپورت کن: */
+/* @import url("badge.css"); */
 
 /* بک‌گراند اصلی */
 body {
@@ -18,7 +20,7 @@ body {
     margin: 60px auto 0 auto;
     max-width: 1200px;
     padding: 0 20px;
-    flex-wrap: wrap; /* برای موبایل */
+    flex-wrap: wrap; 
 }
 
 /* Swap Card */
@@ -60,6 +62,7 @@ body {
     font-size: 18px;
     margin-top: 3px;
     outline: none;
+    width: 100px; /* فیکس کردن عرض */
 }
 
 /* Token Dropdown */
@@ -89,6 +92,7 @@ body {
 .swap-btn-standard {
     width: 100%;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 /* Guide Section */
@@ -104,6 +108,7 @@ body {
     border: 1px solid var(--color-border);
     object-fit: cover;
     max-height: 260px;
+    cursor: pointer;
 }
 
 .guide-text {
@@ -123,10 +128,25 @@ body {
     text-align: center;
 }
 
-/* استفاده از کامپوننت جدول متریال */
 .recent-transactions table {
     width: 100%;
+    border-collapse: collapse;
 }
+
+.recent-transactions th, .recent-transactions td {
+    padding: 12px;
+    text-align: left; /* برای زبان انگلیسی چپ چین بهتر است */
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* وضعیت‌های جدول */
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+.status.completed { background: rgba(0, 255, 0, 0.1); color: #2ecc71; }
+.status.pending { background: rgba(255, 165, 0, 0.1); color: #f39c12; }
 
 @media screen and (max-width: 900px) {
     .container {
@@ -137,4 +157,19 @@ body {
     .swap-card, .recent-transactions {
         width: 100%;
     }
+}
+/* برای تراز شدن دقیق آیدی و بج در جدول */
+/* انتخاب اولین ستون در تمام ردیف‌های بدنه جدول */
+/* انتخاب آخرین ستون در بدنه جدول چون جهت صفحه RTL است، ID آخرین ستون محسوب می‌شود */
+#txTable tbody td:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* تراز کردن محتوا با تیتر بالا */
+    gap: 8px;
+    direction: ltr; /* برای اینکه کلمه TX از چپ به راست نوشته شود اما در سمت راست سلول بماند */
+}
+
+/* برای اطمینان از اینکه متن ID و بج در یک خط بمانند */
+#txTable td span {
+    white-space: nowrap;
 }

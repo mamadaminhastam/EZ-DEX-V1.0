@@ -7,157 +7,95 @@
 
     <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="components/table.css">
+    
+    <link rel="stylesheet" href="badge.css"> 
+    
     <link rel="stylesheet" href="swap.css">
 </head>
 <body>
 
 <header class="navbar">
     <div class="brand">
-        <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
-        <span>EZ DEX</span>
-        <a href="register.html" class="btn-primary-sm btn-round is-hover">Register</a>
+        <img src="main/Theme/images/logo.png" alt="EZ DEX Logo" >
+        <span></span>
+        
     </div>
 
     <nav>
-        <a class="active" href="#">Swap</a>
+        <a class="active badge-container" href="#">
+            Swap
+            <span id="swapCountBadge" class="badge badge-lg" style="display: none;">0</span>
+        </a>
         <a href="liquidity.html">Liquidity</a>
         <a href="staking.html">Staking</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">login</a>
     </nav>
 </header>
 
 <main class="container">
 
-    <!-- Swap Card -->
     <div class="swap-card">
         <h2>Swap Tokens</h2>
 
-        <!-- Input From -->
         <div class="swap-input">
             <div class="input-left">
                 <label>From</label>
-                <input type="number" placeholder="0.0">
+                <input type="number" id="amountFrom" placeholder="0.0">
             </div>
-            <select class="token-select">
-                <option>ETH</option>
-                <option>USDT</option>
-                <option>WBTC</option>
+            <select class="token-select" id="tokenFrom">
+                <option value="ETH">ETH</option>
+                <option value="USDT">USDT</option>
+                <option value="WBTC">WBTC</option>
             </select>
         </div>
 
-        <!-- Arrow -->
         <div class="arrow">↓</div>
 
-        <!-- Input To -->
         <div class="swap-input">
             <div class="input-left">
                 <label>To</label>
-                <input type="number" placeholder="0.0">
+                <input type="number" id="amountTo" placeholder="0.0" readonly>
             </div>
-            <select class="token-select">
-                <option>USDT</option>
-                <option>ETH</option>
-                <option>WETH</option>
+            <select class="token-select" id="tokenTo">
+                <option value="USDT">USDT</option>
+                <option value="ETH">ETH</option>
+                <option value="WETH">WETH</option>
             </select>
         </div>
 
-        <!-- Swap Button -->
-        <button class="btn-primary-sm swap-btn-standard">Swap</button>
+        <button id="swapBtn" class="btn-primary-sm swap-btn-standard">Swap</button>
 
-        <!-- ویدیو آموزشی -->
         <div class="guide">
             <video id="swapVideo" src="main/Theme/videos/swap.mp4"></video>
             <p class="guide-text">
-                در این بخش می‌تونی به راحتی توکن‌هات رو تبدیل کنی...
-                روی ویدیو کلیک کن
+                برای آموزش نحوه تبدیل ارزها، ویدیو را مشاهده کنید.
             </p>
         </div>
     </div>
 
-    <!-- Recent Transactions Table -->
     <div class="recent-transactions">
         <h2>Recent Transactions</h2>
 
-        <table class="material-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Pair</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#TX1001</td>
-                    <td>ETH / USDT</td>
-                    <td>0.5 ETH</td>
-                    <td>2025-12-23 12:15</td>
-                    <td><span class="status completed">Completed</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                <tr>
-                    <td>#TX1002</td>
-                    <td>BTC / USDT</td>
-                    <td>0.1 BTC</td>
-                    <td>2025-12-23 11:50</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                <tr>
-                    <td>#TX1003</td>
-                    <td>USDT / WETH</td>
-                    <td>250 USDT</td>
-                    <td>2025-12-22 18:40</td>
-                    <td><span class="status completed">Completed</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                <tr>
-                    <td>#TX1004</td>
-                    <td>ETH / WBTC</td>
-                    <td>1 ETH</td>
-                    <td>2025-12-22 16:05</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                 <tr>
-                    <td>#TX1004</td>
-                    <td>ETH / WBTC</td>
-                    <td>1 ETH</td>
-                    <td>2025-12-22 16:05</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                 <tr>
-                    <td>#TX1004</td>
-                    <td>ETH / WBTC</td>
-                    <td>1 ETH</td>
-                    <td>2025-12-22 16:05</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                 <tr>
-                    <td>#TX1004</td>
-                    <td>ETH / WBTC</td>
-                    <td>1 ETH</td>
-                    <td>2025-12-22 16:05</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td><button>View</button></td>
-                </tr>
-                
-            </tbody>
-        </table>
+                <table class="material-table" id="txTable">
+                 <thead>
+                    <tr>
+                     <th>ID</th>
+                     <th>Pair</th>
+                     <th>Amount</th>
+                     <th>Time</th>
+                     <th>Status</th>
+                     <th>Action</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                 </tbody>
+                </table>
     </div>
 
 </main>
 
-<script>
-    const video = document.getElementById('swapVideo');
-    video.addEventListener('click', () => {
-        video.paused ? video.play() : video.pause();
-    });
-</script>
+<script src="swap.js"></script>
 
 </body>
 </html>

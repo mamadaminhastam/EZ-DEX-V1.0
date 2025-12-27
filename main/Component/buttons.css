@@ -90,29 +90,38 @@ button,
   background: var(--color-secondary);
 }
 /* Primary Filled Button — Small */
+/* اصلاح کلاس دکمه کوچک برای تراز شدن دقیق متن */
 .btn-primary-sm {
-  background: var(--color-primary);
-  color: var(--color-on-primary);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
 
-  padding: 6px 14px;   /* کوچک */
-  border-radius: 8px;
-  border: none;
+    padding: 8px 16px;   /* کمی پدینگ را متقارن‌تر کردیم */
+    border-radius: 8px;
+    border: none;
 
-  font-size: 14px;  
-  font-weight: 600;   
-  line-height: 1.4;
+    font-size: 14px;  
+    font-weight: 600;   
+    
+    /* تغییر مهم: برای تراز عمودی دقیق، line-height را 1 قرار می‌دهیم */
+    line-height: 1;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    display: inline-flex;
+    align-items: center;    /* تراز عمودی */
+    justify-content: center; /* تراز افقی */
+    
+    /* جلوگیری از به هم ریختگی تگ a */
+    vertical-align: middle;
+    text-align: center;
 
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
+/* هماهنگی هاور با رنگ دکمه سواپ */
 .btn-primary-sm:hover {
-  background: var(--color-secondary);
+    background: var(--color-secondary);
+    /* اگر در colors.css متغیر color-primary-hover داری از آن استفاده کن */
 }
 /* ===============================
    Shapes (Material Shape)
