@@ -1,13 +1,22 @@
-@import url(Component/colors.css);
+/* ۱. لایه زیربنا (Variables) */
+@import url("Component/colors.css");
+@import url("Component/TextField.css");
+@import url("Component/fonts.css");
+@import url("Component/shape.css"); /* اول شکل‌ها تعریف شوند */
 
-@import url(Component/fonts.css);
-@import url(Component/Typography.css);
+/* ۲. لایه تایپوگرافی */
+@import url("Component/Typography.css");
+@import url("Component/Typography_map.css");
 
-@import url(Component/Typography_map.css);
-@import url(Component/buttons.css);
-@import url(Component/table.css);
-@import url(Component/shape.css);
-@import url(Component/badge.css);
+/* ۳. لایه کامپوننت‌های پایه */
+@import url("Component/buttons.css");
+@import url("Component/icon-button.css");
+@import url("Component/badge.css");
+
+/* ۴. لایه کامپوننت‌های پیچیده */
+@import url("Component/CheckBox_RadioButton.css"); /* طبق تکلیف ۲ */
+@import url("Component/table.css");
+
 /* ========== Navbar (Global Component) ========== */
 
 .navbar {
@@ -65,4 +74,9 @@
     height: 53px;
     width: 53px;
     object-fit: contain;
+}
+/* همیشه فضای نوار اسکرول را نگه دار تا محتوا جابه‌جا نشود */
+html {
+    /* همیشه فضای نوار اسکرول را نگه دار تا محتوا جابه‌جا نشود */
+    scrollbar-gutter: stable;
 }

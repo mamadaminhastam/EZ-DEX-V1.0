@@ -1,0 +1,80 @@
+/* Container اصلی برای کنترل‌های انتخابی */
+.m3-selection-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    user-select: none;
+}
+
+/* مخفی کردن ورودی‌های اصلی مرورگر */
+.m3-selection-control input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* لایه وضعیت (State Layer) - آن دایره‌ای که هنگام هاور ظاهر می‌شود */
+.m3-selection-control .state-layer {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+/* طراحی محفظه چک‌باکس */
+.checkbox-container {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-text-muted);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* وضعیت ENABLED و CHECKED */
+.m3-selection-control input:checked + .checkbox-container {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* آیکون تیک متریال */
+.checkbox-container .material-icons {
+    font-size: 16px;
+    color: white;
+    display: none;
+}
+
+.m3-selection-control input:checked + .checkbox-container .material-icons {
+    display: block;
+}
+
+/* وضعیت HOVER */
+.m3-selection-control:hover .state-layer {
+    background-color: rgba(var(--color-primary-rgb), 0.08);
+}
+
+/* وضعیت FOCUS */
+.m3-selection-control input:focus-visible + .checkbox-container {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+/* وضعیت PRESSED */
+.m3-selection-control:active .state-layer {
+    background-color: rgba(var(--color-primary-rgb), 0.12);
+}
+
+/* وضعیت DISABLED */
+.m3-selection-control input:disabled ~ * {
+    opacity: 0.38;
+    cursor: not-allowed;
+}

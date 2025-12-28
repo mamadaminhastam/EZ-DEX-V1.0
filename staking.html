@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ DEX - Staking</title>
 
-    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="staking.css">
 </head>
 <body>
@@ -13,10 +13,6 @@
 <header class="navbar">
   <div class="brand">
       <img src="main/Theme/images/logo.png" alt="EZ DEX Logo" >
-      <span></span>
-
-      <!-- دکمه ثبت‌نام: حالا مثل liquidity از کلاس btn-primary-sm استفاده شده -->
-   
   </div>
 
   <nav>
@@ -24,7 +20,7 @@
       <a href="liquidity.html">Liquidity</a>
       <a class="active" href="#">Staking</a>
       <a href="register.html">Register</a>
-        <a href="login.html">login</a>
+      <a href="login.html">Login</a>
   </nav>
 </header>
 
@@ -33,35 +29,31 @@
     <div class="stake-card">
         <h2>Staking</h2>
 
-        <!-- Balance Box -->
         <div class="balance-box">
             <span>Available Margin To Stake</span>
             <strong>0 EZD</strong>
         </div>
 
-        <!-- Stake Input -->
-        <div class="stake-input">
-            <label>Stake amount</label>
-            <input type="number" placeholder="0.0">
+        <div class="m3-textfield">
+            <input type="number" id="stake-amount" placeholder=" " required>
+            <label for="stake-amount">Stake amount</label>
         </div>
 
-        <!-- دکمه‌ها با اندازه‌ی مشابه liquidity -->
-        <button class="btn-primary-sm">Stake</button>
+        <button class="btn-primary-sm full-width">Stake</button>
 
         <hr class="divider">
 
         <h3>Unstake</h3>
 
-        <div class="stake-input">
-            <label>Amount to Unstake</label>
-            <input type="number" placeholder="0.0">
+        <div class="m3-textfield">
+            <input type="number" id="unstake-amount" placeholder=" " required>
+            <label for="unstake-amount">Amount to Unstake</label>
         </div>
 
-        <button class="btn-primary-sm">Unstake</button>
+        <button class="btn-primary-sm full-width">Unstake</button>
 
     </div>
 
-    <!-- در صورت تمایل می‌توانید قسمت راهنما (guide) را اضافه کنید تا layout دقیقاً مثل صفحه‌ی liquidity شود -->
     <div class="guide">
         <img src="main/Theme/images/stake.jpg" alt="Staking Guide">
         <div class="guide-text">

@@ -1,0 +1,51 @@
+/* فایل icon-button.css */
+
+/* استایل عمومی برای آیکون‌های داخل دکمه */
+.material-icons {
+    font-size: 24px;
+    display: block;
+}
+
+/* دکمه شناور FAB */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px; 
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: none; /* در ابتدا مخفی است و با JS ظاهر می‌شود */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fab:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    background-color: var(--color-primary); /* تغییر رنگ در هاور */
+    color: white;
+}
+
+/* دکمه‌های آیکون معمولی (مثلاً برای بستن یا تنظیمات) */
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    background-color: rgba(var(--color-primary-rgb), 0.1);
+}

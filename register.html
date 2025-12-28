@@ -2,59 +2,58 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - EZ DEX</title>
 
-    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
-
-    <!-- دکمه بازگشت -->
-    <a href="swap.html" class="btn-primary-sm back-btn">Home</a>
-
-    <!-- برند بالای صفحه -->
-    <div class="brand">
-        <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
-        <span>EZ DEX</span>
-    </div>
+    <header class="navbar">
+        <div class="brand">
+            <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
+        </div>
+        <nav>
+            <a href="swap.html">Swap</a>
+            <a href="liquidity.html">Liquidity</a>
+            <a href="staking.html">Staking</a>
+            <a class="active" href="#">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
 
     <div class="register-container">
-
-        <h1>ایجاد حساب کاربری</h1>
+        <h1>حساب جدید</h1>
 
         <form>
-
-            <div class="input-group">
-                <label for="reg-username">نام کاربری:</label>
-                <input type="text" id="reg-username" required>
+            <div class="m3-textfield">
+                <input type="text" id="reg-username" placeholder=" " required>
+                <label for="reg-username">نام کاربری</label>
+                <div class="supporting-text">از حروف انگلیسی و اعداد استفاده کنید</div>
             </div>
 
-            <div class="input-group">
-                <label for="reg-email">ایمیل:</label>
-                <input type="email" id="reg-email" required>
+            <div class="m3-textfield">
+                <input type="email" id="reg-email" placeholder=" " required>
+                <label for="reg-email">ایمیل</label>
             </div>
 
-            <div class="input-group">
-                <label for="reg-password">رمز عبور:</label>
-                <input type="password" id="reg-password" required>
+            <div class="m3-textfield">
+                <input type="password" id="reg-password" placeholder=" " required>
+                <label for="reg-password">رمز عبور</label>
             </div>
 
-            <div class="input-group">
-                <label for="reg-confirm-password">تکرار رمز عبور:</label>
-                <input type="password" id="reg-confirm-password" required>
+            <div class="m3-textfield">
+                <input type="password" id="reg-confirm-password" placeholder=" " required>
+                <label for="reg-confirm-password">تکرار رمز عبور</label>
             </div>
 
-            <!-- دکمه submit هماهنگ با Liquidity -->
             <button type="submit" class="btn-primary-sm full-width">ثبت نام</button>
-
         </form>
 
         <p class="login-link">
             حساب دارید؟ <a href="login.html">وارد شوید</a>
         </p>
-
     </div>
-
 </body>
 </html>

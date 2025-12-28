@@ -1,8 +1,6 @@
-@import url("main/main.css");
-/* اگر badge.css را در main ایمپورت نکردی، همینجا ایمپورت کن: */
-/* @import url("badge.css"); */
 
-/* بک‌گراند اصلی */
+
+/* بک‌گراند و تنظیمات کلی بدنه */
 body {
     background: var(--color-background);
     color: var(--color-text);
@@ -11,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-/* Layout کلی */
+/* چیدمان اصلی (فلکس برای قرارگیری کارت و جدول کنار هم) */
 .container {
     display: flex;
     justify-content: center;
@@ -23,109 +21,114 @@ body {
     flex-wrap: wrap; 
 }
 
-/* Swap Card */
+/* کارت سواپ - مطابق با استانداردهای متریال ۳ */
 .swap-card {
     background: var(--color-surface);
-    padding: 25px;
-    border-radius: 14px;
-    width: 340px;
+    padding: 24px;
+    border-radius: 20px; /* لبه‌های گردتر طبق M3 */
+    width: 380px;
     border: 1px solid var(--color-border);
     flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .swap-card h2 {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     text-align: center;
+    color: var(--color-primary);
+    font-size: 1.5rem;
 }
 
-/* Swap Inputs */
-.swap-input {
+/* ردیف‌های ورودی (ترکیب اینپوت متریال و دراپ‌داون ارز) */
+.swap-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+/* تنظیم عرض اختصاصی برای اینپوت و سلکت در سواپ */
+.swap-row .m3-textfield {
+    flex: 2;
+    margin-bottom: 0; /* حذف فاصله اضافی */
+}
+
+/* استایل دراپ‌داون ارز هماهنگ با ارتفاع فیلدهای متریال */
+.m3-select {
+    flex: 1;
+    height: 56px; /* هماهنگ با ارتفاع TextField.css */
     background: var(--color-background);
     border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.input-left {
-    display: flex;
-    flex-direction: column;
-}
-
-.swap-input input {
-    background: transparent;
-    border: none;
+    border-radius: 4px;
     color: var(--color-text);
-    font-size: 18px;
-    margin-top: 3px;
-    outline: none;
-    width: 100px; /* فیکس کردن عرض */
-}
-
-/* Token Dropdown */
-.token-select {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: 8px 10px;
-    border-radius: 8px;
-    color: var(--color-text);
+    padding: 0 1px;
     cursor: pointer;
     outline: none;
+    transition: all 0.2s;
+    width: 5px;
 }
 
-.token-select:hover {
-    border-color: var(--color-primary);
+.m3-select:hover {
+    border-color: var(--color-text);
 }
 
-/* Arrow */
+.m3-select:focus {
+    border: 2px solid var(--color-primary);
+}
+
+
+/* فلش وسط دو ورودی */
 .arrow {
     text-align: center;
-    margin: 10px 0;
-    color: var(--color-text-muted);
-    font-size: 20px;
+    margin: 4px 0 16px 0;
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
 }
 
-/* Swap Button */
+/* دکمه سواپ */
 .swap-btn-standard {
     width: 100%;
-    margin-top: 10px;
-    cursor: pointer;
+    margin-top: 12px;
 }
 
-/* Guide Section */
+/* بخش راهنما و ویدیو */
 .guide {
-    max-width: 350px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
     text-align: center;
-    margin-top: 20px;
 }
 
 .guide video {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid var(--color-border);
+    max-height: 220px;
     object-fit: cover;
-    max-height: 260px;
-    cursor: pointer;
+    margin-bottom: 12px;
 }
 
 .guide-text {
-    margin-top: 15px;
     color: var(--color-text-muted);
+    font-size: 14px;
     line-height: 1.6;
 }
 
-/* Recent Transactions Table */
+/* جدول تراکنش‌ها */
 .recent-transactions {
     flex: 1;
     min-width: 360px;
+    background: var(--color-surface);
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
 }
 
 .recent-transactions h2 {
-    margin-bottom: 16px;
-    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
 }
 
 .recent-transactions table {
@@ -133,43 +136,43 @@ body {
     border-collapse: collapse;
 }
 
-.recent-transactions th, .recent-transactions td {
-    padding: 12px;
-    text-align: left; /* برای زبان انگلیسی چپ چین بهتر است */
+.recent-transactions th, 
+.recent-transactions td {
+    padding: 16px 12px;
+    text-align: left;
     border-bottom: 1px solid var(--color-border);
 }
 
-/* وضعیت‌های جدول */
+/* وضعیت‌های تراکنش در جدول */
 .status {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
 }
-.status.completed { background: rgba(0, 255, 0, 0.1); color: #2ecc71; }
-.status.pending { background: rgba(255, 165, 0, 0.1); color: #f39c12; }
+.status.completed { background: rgba(46, 204, 113, 0.15); color: #2ecc71; }
+.status.pending { background: rgba(243, 156, 18, 0.15); color: #f39c12; }
 
+/* ریسپانسیو برای تبلت و موبایل */
 @media screen and (max-width: 900px) {
     .container {
         flex-direction: column;
         align-items: center;
+        margin-top: 30px;
     }
 
-    .swap-card, .recent-transactions {
+    .swap-card, 
+    .recent-transactions {
         width: 100%;
+        max-width: 500px;
     }
 }
-/* برای تراز شدن دقیق آیدی و بج در جدول */
-/* انتخاب اولین ستون در تمام ردیف‌های بدنه جدول */
-/* انتخاب آخرین ستون در بدنه جدول چون جهت صفحه RTL است، ID آخرین ستون محسوب می‌شود */
+
+/* تنظیمات سلول آیدی و آیکون */
 #txTable tbody td:last-child {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* تراز کردن محتوا با تیتر بالا */
+    justify-content: flex-start;
     gap: 8px;
-    direction: ltr; /* برای اینکه کلمه TX از چپ به راست نوشته شود اما در سمت راست سلول بماند */
-}
-
-/* برای اطمینان از اینکه متن ID و بج در یک خط بمانند */
-#txTable td span {
-    white-space: nowrap;
+    direction: ltr;
 }

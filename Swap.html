@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ DEX - Swap</title>
 
-    <link rel="stylesheet" href="colors.css">
-    <link rel="stylesheet" href="components/table.css">
     
-    <link rel="stylesheet" href="badge.css"> 
-    
+    <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="swap.css">
 </head>
 <body>
@@ -36,36 +33,35 @@
 <main class="container">
 
     <div class="swap-card">
-        <h2>Swap Tokens</h2>
+            <h2>Swap Tokens</h2>
 
-        <div class="swap-input">
-            <div class="input-left">
-                <label>From</label>
-                <input type="number" id="amountFrom" placeholder="0.0">
+            <div class="swap-row">
+                <div class="m3-textfield">
+                    <input type="number" id="amountFrom" placeholder=" " required>
+                    <label for="amountFrom">مقدار (From)</label>
+                </div>
+                <select class="m3-select" id="tokenFrom">
+                    <option value="ETH">ETH</option>
+                    <option value="USDT">USDT</option>
+                    <option value="WBTC">WBTC</option>
+                </select>
             </div>
-            <select class="token-select" id="tokenFrom">
-                <option value="ETH">ETH</option>
-                <option value="USDT">USDT</option>
-                <option value="WBTC">WBTC</option>
-            </select>
-        </div>
 
-        <div class="arrow">↓</div>
+            <div class="arrow">↓</div>
 
-        <div class="swap-input">
-            <div class="input-left">
-                <label>To</label>
-                <input type="number" id="amountTo" placeholder="0.0" readonly>
+            <div class="swap-row">
+                <div class="m3-textfield">
+                    <input type="number" id="amountTo" placeholder=" " readonly>
+                    <label for="amountTo">مقدار (To)</label>
+                </div>
+                <select class="m3-select" id="tokenTo">
+                    <option value="USDT">USDT</option>
+                    <option value="ETH">ETH</option>
+                    <option value="WETH">WETH</option>
+                </select>
             </div>
-            <select class="token-select" id="tokenTo">
-                <option value="USDT">USDT</option>
-                <option value="ETH">ETH</option>
-                <option value="WETH">WETH</option>
-            </select>
-        </div>
 
-        <button id="swapBtn" class="btn-primary-sm swap-btn-standard">Swap</button>
-
+            <button id="swapBtn" class="btn-primary-sm full-width">Swap</button>
         <div class="guide">
             <video id="swapVideo" src="main/Theme/videos/swap.mp4"></video>
             <p class="guide-text">
