@@ -1,0 +1,68 @@
+/* settings.css */
+@import url("main/main.css");
+
+body {
+    background: var(--color-background);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+.settings-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px; /* عرض مناسب برای تنظیمات */
+    padding: 30px;
+}
+
+.settings-card h1 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.settings-section h2 {
+    font-size: 18px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* آیتم تنظیمات: متن سمت راست، سوییچ سمت چپ */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 8px 0;
+}
+
+.setting-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.setting-info .title {
+    font-size: 16px;
+    color: var(--color-text);
+}
+
+.setting-info .desc {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: 20px 0 30px 0;
+    opacity: 0.3;
+}

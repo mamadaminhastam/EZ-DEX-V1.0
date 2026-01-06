@@ -7,44 +7,109 @@
     border-radius: 16px;
     padding: 16px;
     font-family: inherit;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    /* ایجاد یک بردر پیش‌فرض که در حالت دارک هم مشخص باشد */
+    border: 1px solid rgba(255, 216, 216, 0.08); 
+    transition: all 0.25s ease;
+    box-sizing: border-box;
 }
+
+/* --- انواع کارت‌ها --- */
 
 .card.filled {
     background: linear-gradient(180deg,
             var(--color-surface),
             rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .card.outlined {
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
+    /* استفاده از رنگ پرایمری برای بردر جهت وضوح بیشتر */
+    border: 1.5px solid var(--color-primary); 
+    background: transparent;
 }
 
 .card.elevated {
     background: var(--color-surface);
+    /* ترکیب بردر نازک و سایه برای جدا شدن از صفحه */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.6),
         0 0 0 1px rgba(255, 255, 255, 0.02);
 }
+
+/* --- وضعیت‌ها (States) --- */
+
 .card.is-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    transform: translateY(-4px);
+    /* در هنگام هاور مرز کارت با رنگ اصلی روشن می‌شود */
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
+
 .card.is-focus:focus,
 .card.is-focus:focus-within {
     outline: none;
+    border-color: var(--color-primary);
     box-shadow:
-        0 0 0 2px var(--color-primary),
+        0 0 0 2px rgba(var(--color-primary-rgb, 100, 100, 255), 0.3),
         0 6px 16px rgba(0, 0, 0, 0.6);
 }
+
 .card.is-active:active {
     transform: scale(0.98);
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
+
 .card.is-disabled {
     opacity: 0.5;
     pointer-events: none;
 }
 
+/* ===========================
+   Light Mode Styles
+   (بدون !important و با حفظ انواع کارت)
+=========================== */
+
+/* حالت پایه کارت در تم روشن */
+body.light-mode .card {
+    background: #ffffff;
+    color: #1a1a1b;
+    /* لایه نازک دور کارت در تم روشن */
+    border: 1px solid #e2e8f0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+/* حفظ ظاهر Filled در تم روشن */
+body.light-mode .card.filled {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+/* حفظ ظاهر Outlined در تم روشن */
+body.light-mode .card.outlined {
+    border: 1.5px solid var(--color-primary);
+    background: #ffffff;
+}
+
+/* حفظ ظاهر Elevated در تم روشن با مرز مشخص */
+body.light-mode .card.elevated {
+    background: #ffffff;
+    border: 1px solid #cbd5e1; /* لایه مشخص‌تر */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* هاور در تم روشن */
+body.light-mode .card.is-hover:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* اصلاح رنگ متن لیبل‌ها در تم روشن */
+body.light-mode .card .label {
+    color: #64748b;
+}
+
+body.light-mode .card .value,
+body.light-mode .card .pair-name {
+    color: #0f172a;
+}

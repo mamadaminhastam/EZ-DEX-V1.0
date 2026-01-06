@@ -1,8 +1,10 @@
 /* ۱. لایه زیربنا (Variables) */
 @import url("Component/colors.css");
 @import url("Component/TextField.css");
+@import url("Component/switch.css");
 @import url("Component/fonts.css");
-@import url("Component/shape.css"); /* اول شکل‌ها تعریف شوند */
+@import url("Component/shape.css");
+@import url("Component/card.css"); /* اول شکل‌ها تعریف شوند */
 
 /* ۲. لایه تایپوگرافی */
 @import url("Component/Typography.css");

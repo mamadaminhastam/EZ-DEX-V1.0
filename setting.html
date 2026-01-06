@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - EZ DEX</title>
+
+    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="setting.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
+        </div>
+        <nav>
+            <a href="swap.html">Swap</a>
+            <a href="liquidity.html">Liquidity</a>
+            <a href="staking.html">Staking</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a class="active" href="#">Settings</a>
+            
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="settings-card">
+            <h1>تنظیمات</h1>
+
+            <div class="settings-section">
+                <h2>شخصی‌سازی</h2>
+                
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <span class="title">حالت روشن (Light Mode)</span>
+                        <span class="desc">تغییر ظاهر برنامه به تم روشن</span>
+                    </div>
+                    <label class="m3-switch">
+                        <input type="checkbox" id="theme-switch">
+                        <div class="track">
+                            <div class="handle">
+                                <span class="material-icons">wb_sunny</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="settings-section">
+                <h2>امنیت و ورود</h2>
+                
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <span class="title">احراز هویت دو مرحله‌ای (2FA)</span>
+                        <span class="desc">این قابلیت در حال حاضر در دسترس نیست</span>
+                    </div>
+                    <label class="m3-switch disabled">
+                        <input type="checkbox" disabled>
+                        <div class="track">
+                            <div class="handle">
+                                <span class="material-icons">check</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <span class="title">ورود بیومتریک</span>
+                        <span class="desc">به زودی فعال می‌شود</span>
+                    </div>
+                    <label class="m3-switch disabled">
+                        <input type="checkbox" disabled>
+                        <div class="track">
+                            <div class="handle">
+                                <span class="material-icons">check</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="settings-section">
+                <h2>عمومی</h2>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <span class="title">اعلان‌ها (Notifications)</span>
+                        <span class="desc">دریافت ایمیل تراکنش‌ها</span>
+                    </div>
+                    <label class="m3-switch disabled">
+                        <input type="checkbox" checked disabled>
+                        <div class="track">
+                            <div class="handle">
+                                <span class="material-icons">check</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="main/theme.js"></script>
+
+</body>
+</html>

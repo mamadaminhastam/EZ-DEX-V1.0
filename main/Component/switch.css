@@ -1,0 +1,118 @@
+/* Component/Switch.css */
+
+/* کانتینر اصلی سوییچ */
+.m3-switch {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    width: 52px;  /* طبق استاندارد M3 */
+    height: 32px;
+    direction: ltr; /* جهت همیشه چپ به راست باشد (راست=روشن) */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* مخفی کردن چک‌باکس واقعی */
+.m3-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* 1. Track (بدنه اصلی) */
+.m3-switch .track {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-text-muted); /* رنگ بوردر در حالت خاموش */
+    border-radius: 100px; /* شکل کپسولی */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Handle (دایره متحرک) */
+.m3-switch .handle {
+    position: absolute;
+    top: 50%;
+    left: 6px; /* فاصله اولیه */
+    transform: translateY(-50%);
+    width: 16px; /* سایز هندل در حالت خاموش */
+    height: 16px;
+    background-color: var(--color-text-muted);
+    border-radius: 50%;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* آیکون داخل هندل (تیک) */
+.m3-switch .handle .material-icons {
+    font-size: 16px;
+    color: var(--color-primary); /* رنگ تیک */
+    opacity: 0; /* در حالت خاموش دیده نشود */
+    transform: scale(0);
+    transition: all 0.2s;
+}
+
+/* --- حالت Checked (روشن) --- */
+.m3-switch input:checked + .track {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.m3-switch input:checked + .track .handle {
+    background-color: #ffffff; /* رنگ هندل روشن */
+    left: calc(100% - 28px); /* محاسبه دقیق محل قرارگیری */
+    width: 24px; /* هندل بزرگ می‌شود */
+    height: 24px;
+}
+
+/* نمایش آیکون تیک در حالت روشن */
+.m3-switch input:checked + .track .handle .material-icons {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--color-primary); /* رنگ آیکون */
+    font-weight: bold;
+}
+
+/* --- تعاملات (States) --- */
+
+/* Hover: هاله دور هندل */
+.m3-switch:hover .handle::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Focus: خط دور ترک */
+.m3-switch input:focus-visible + .track {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Active (Pressed): هندل کمی بزرگتر می‌شود */
+.m3-switch:active .handle {
+    width: 28px;
+    height: 28px;
+}
+
+/* Disabled: غیرفعال */
+.m3-switch input:disabled + .track {
+    opacity: 0.38;
+    cursor: not-allowed;
+    background-color: rgba(255,255,255,0.12);
+    border-color: transparent;
+}
+
+.m3-switch input:disabled + .track .handle {
+    opacity: 0.38;
+    background-color: #e0e0e0;
+}
+.m3-switch.disabled {
+    cursor: not-allowed;
+}
