@@ -37,392 +37,320 @@
     <!-- Liquidity Grid -->
     <section class="liquidity-section">
         <h2>Liquidity Pools</h2>
+          <div class="liquidity-controls card outlined">
+    <div class="controls-top-row">
+        <div class="m3-textfield">
+            <input type="text" id="searchPool" placeholder=" " required>
+            <label>جستجوی استخر (مثلاً ETH یا BTC)</label>
+        </div>
 
+        <select class="m3-select sort-dropdown">
+            <option value="apr">بیشترین APR</option>
+            <option value="tvl">بیشترین نقدینگی (TVL)</option>
+        </select>
+    </div>
+
+    <div class="controls-bottom-row">
+        <h6 class="title-small" style="color: var(--color-text-muted);">دسته‌بندی:</h6>
+        <div class="category-chips">
+            <button class="chip active">همه</button>
+            <button class="chip">Stablecoins</button>
+            <button class="chip">BlueChips</button>
+         </div>
+        </div>
+    </div>  
         <div class="pair-grid" dir="ltr">
 
             <!-- CARD -->
-            <div class="card elevated liquidity-card is-hover">
+            <div class="card elevated liquidity-card is-hover"data-name="eth usdt" data-category="BlueChips">
                 <div class="card-header">
                     <span class="pair-name">ETH / USDT</span>
-                    <span class="apr">APR 12%</span>
+                    <span class="apr">APR 20%</span>
                 </div>
 
                 <div class="card-stats">
                     <div>
                         <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
+                        <span class="value">$12.2M</span>
                     </div>
                     <div>
                         <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
+                        <span class="value">$3M</span>
                     </div>
                 </div>
 
                 <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
             </div>
-            <div class="card elevated liquidity-card is-hover">
+            <div class="card elevated liquidity-card is-hover"data-name="sol usdt" data-category="BlueChips">
                 <div class="card-header">
                     <span class="pair-name">SOL / USDT</span>
-                    <span class="apr">APR 12%</span>
+                    <span class="apr">APR 17%</span>
                 </div>
 
                 <div class="card-stats">
                     <div>
                         <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
+                        <span class="value">$2M</span>
                     </div>
                     <div>
                         <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
+                        <span class="value">$1M</span>
                     </div>
                 </div>
 
                 <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
             </div>
-            <div class="card elevated liquidity-card is-hover">
+            <div class="card elevated liquidity-card is-hover"data-name="bnb usdt" data-category="BlueChips">
                 <div class="card-header">
                     <span class="pair-name">BNB / USDT</span>
-                    <span class="apr">APR 12%</span>
+                    <span class="apr">APR 25%</span>
                 </div>
 
                 <div class="card-stats">
                     <div>
                         <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">ETC / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">BCH / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">LINK / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">OP / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">HBAR / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">UNI / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">STX / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">OG / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">ARB / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">LISK / USDT</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">ETH / BUSD</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">ETH / USDC</span>
-                    <span class="apr">APR 12%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">ETH / BTC</span>
-                    <span class="apr">APR 9%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$5.1M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
-                        <span class="value">$820K</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
-            </div>
-
-            <div class="card elevated liquidity-card is-hover">
-                <div class="card-header">
-                    <span class="pair-name">USDC / USDT</span>
-                    <span class="apr">APR 15%</span>
-                </div>
-
-                <div class="card-stats">
-                    <div>
-                        <span class="label">TVL</span>
-                        <span class="value">$11.3M</span>
-                    </div>
-                    <div>
-                        <span class="label">Volume (24h)</span>
                         <span class="value">$2.2M</span>
                     </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$22.4M</span>
+                    </div>
                 </div>
 
                 <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
             </div>
-              <div class="card elevated liquidity-card is-hover">
+            <div class="card elevated liquidity-card is-hover"data-name="etc usdt" data-category="BlueChips">
                 <div class="card-header">
-                    <span class="pair-name">BNB / USDT</span>
-                    <span class="apr">APR 12%</span>
+                    <span class="pair-name">ETC / USDT</span>
+                    <span class="apr">APR 5%</span>
                 </div>
 
                 <div class="card-stats">
                     <div>
                         <span class="label">TVL</span>
-                        <span class="value">$4.2M</span>
+                        <span class="value">$55.2M</span>
                     </div>
                     <div>
                         <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
+                        <span class="value">$2.4M</span>
                     </div>
                 </div>
 
                 <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
             </div>
-              <div class="card elevated liquidity-card is-hover">
+            <div class="card elevated liquidity-card is-hover"data-name="bch usdt" data-category="BlueChips">
                 <div class="card-header">
-                    <span class="pair-name">AVAX / USDT</span>
-                    <span class="apr">APR 12%</span>
+                    <span class="pair-name">BCH / USDT</span>
+                    <span class="apr">APR 70%</span>
                 </div>
 
                 <div class="card-stats">
                     <div>
                         <span class="label">TVL</span>
-                        <span class="value">$8.2M</span>
+                        <span class="value">$76.2M</span>
                     </div>
                     <div>
                         <span class="label">Volume (24h)</span>
-                        <span class="value">$1.4M</span>
+                        <span class="value">$145.4M</span>
                     </div>
                 </div>
 
                 <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
             </div>
-              <div class="card elevated liquidity-card is-hover">
+            <div class="card elevated liquidity-card is-hover"data-name="usdc usdt" data-category="Stablecoins">
                 <div class="card-header">
-                    <span class="pair-name">CAKE / USDT</span>
-                    <span class="apr">APR 12%</span>
+                    <span class="pair-name">USDC / USDT</span>
+                    <span class="apr">APR 6%</span>
                 </div>
 
                 <div class="card-stats">
                     <div>
                         <span class="label">TVL</span>
-                        <span class="value">$9.8M</span>
+                        <span class="value">$21.2M</span>
                     </div>
                     <div>
                         <span class="label">Volume (24h)</span>
-                        <span class="value">$2.3M</span>
+                        <span class="value">$3.4M</span>
                     </div>
                 </div>
 
                 <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
             </div>
+            <div class="card elevated liquidity-card is-hover"data-name="busd usdt" data-category="Stablecoins">
+                <div class="card-header">
+                    <span class="pair-name">BUSD / USDT</span>
+                    <span class="apr">APR 60%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$30.2M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$15.4M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="usdt0 usdt" data-category="Stablecoins">
+                <div class="card-header">
+                    <span class="pair-name">USDT0 / USDT</span>
+                    <span class="apr">APR 13%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$50M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$9.9M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="uni usdt" data-category="BlueChips">
+                <div class="card-header">
+                    <span class="pair-name">UNI / USDT</span>
+                    <span class="apr">APR 32%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$42M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$23M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="dai usdt" data-category="Stablecoins">
+                <div class="card-header">
+                    <span class="pair-name">DAI / USDT</span>
+                    <span class="apr">APR 2%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$25M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$67M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="og usdt" data-category="BlueChips">
+                <div class="card-header">
+                    <span class="pair-name">OG / USDT</span>
+                    <span class="apr">APR 99%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$1M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$2M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="ARB usdt" data-category="BlueChips">
+                <div class="card-header">
+                    <span class="pair-name">ARB / USDT</span>
+                    <span class="apr">APR 40%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$9M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$2M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="lisk usdt" data-category="BlueChips">
+                <div class="card-header">
+                    <span class="pair-name">LISK / USDT</span>
+                    <span class="apr">APR 70%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$21M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$32M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="eth busd" data-category="BlueChips">
+                <div class="card-header">
+                    <span class="pair-name">ETH / BUSD</span>
+                    <span class="apr">APR 50%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$23M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">$1M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+            <div class="card elevated liquidity-card is-hover"data-name="eth usdc" data-category="BlueChips">
+                <div class="card-header">
+                    <span class="pair-name">ETH / USDC</span>
+                    <span class="apr">APR 54%</span>
+                </div>
+
+                <div class="card-stats">
+                    <div>
+                        <span class="label">TVL</span>
+                        <span class="value">$2.2M</span>
+                    </div>
+                    <div>
+                        <span class="label">Volume (24h)</span>
+                        <span class="value">5M</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-sm full btn-round is-hover">Add Liquidity</button>
+            </div>
+
+      
+
+          
                 
             
             

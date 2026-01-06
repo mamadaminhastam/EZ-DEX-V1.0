@@ -82,3 +82,13 @@ html {
     /* همیشه فضای نوار اسکرول را نگه دار تا محتوا جابه‌جا نشود */
     scrollbar-gutter: stable;
 }
+/* تنظیمات کلی بدنه سایت */
+body {
+    background-color: var(--color-background); /* استفاده از متغیر رنگی که در colors.css داری */
+    color: var(--color-text); /* استفاده از متغیر رنگ متن */
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-main); /* یا هر متغیری که در fonts.css داری */
+    line-height: 1.6;
+    direction: rtl; /* چون سایت فارسی است */
+}

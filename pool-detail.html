@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Details - EZ DEX</title>
+    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="pool-detail.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <main class="container detail-container">
+        <div class="pool-header-card card elevated">
+            <div class="pool-info-group">
+                <div class="pair-icons">
+                    <span class="material-icons main-coin">currency_bitcoin</span>
+                    <span class="material-icons base-coin">paid</span>
+                </div>
+                <h2 id="poolName">ETH / USDT</h2>
+                <span class="badge outlined">V3</span>
+                <span class="badge success">0.05%</span>
+            </div>
+            <div class="pool-stats-row" dir="ltr">
+                <div class="stat-item">
+                    <span class="label">Live Price</span>
+                    <span class="value" id="livePrice">$0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div class="content-left-side">
+                <div class="chart-container card elevated no-border">
+                    <div id="tradingview_widget"></div>
+                </div>
+                
+                <div class="pool-data-grid">
+                    <div class="card outlined data-card">
+                        <span class="label">TVL</span>
+                        <span class="value">$142.5M</span>
+                    </div>
+                    <div class="card outlined data-card">
+                        <span class="label">Volume 24H</span>
+                        <span class="value">$24.1M</span>
+                    </div>
+                    <div class="card outlined data-card">
+                    <div class="stat-item">
+                      <span class="label">APR</span>
+                      <span class="value success">--%</span> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-sidebar">
+                <div class="transaction-card card elevated">
+                    <div class="sidebar-header">
+                        <h3>افزودن نقدینگی</h3>
+                        <span class="material-icons">settings</span>
+                    </div>
+                    
+                    <div class="input-container card outlined">
+                        <div class="input-header">
+                            <span class="label" id="tokenALabel">ETH</span>
+                            <span class="balance">Balance: 0.0</span>
+                        </div>
+                        <input type="number" placeholder="0.0" id="inputA">
+                    </div>
+
+                    <div class="plus-divider">
+                        <span class="material-icons">add</span>
+                    </div>
+
+                    <div class="input-container card outlined">
+                        <div class="input-header">
+                            <span class="label">USDT</span>
+                            <span class="balance">Balance: 0.0</span>
+                        </div>
+                        <input type="number" placeholder="0.0" id="inputB">
+                    </div>
+
+                    <div class="price-range-box card outlined">
+                        <span class="label">Current Fee Tier</span>
+                        <span class="value">0.05% (Best for stable pairs)</span>
+                    </div>
+
+                    <button class="btn-primary-sm full btn-round" style="height: 52px; font-weight: bold;">تایید و تأمین نقدینگی</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script src="pool-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+@import url("main/main.css");
+
+.detail-container {
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+/* هدر استخر */
+.pool-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 24px;
+}
+
+.pool-info-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pair-icons {
+    display: flex;
+    align-items: center;
+}
+
+.pair-icons .material-icons {
+    font-size: 32px;
+    color: var(--color-primary);
+}
+
+.pair-icons .base-coin {
+    margin-left: -12px;
+    color: var(--color-text-muted);
+}
+
+/* نمودار بدون بردر */
+.chart-container.no-border {
+    height: 480px;
+    padding: 0; /* حذف پدینگ برای چسبیدن نمودار به لبه */
+    overflow: hidden;
+    border: none !important;
+    background: #131722; /* رنگ پس‌زمینه استاندارد تریدینگ ویو */
+}
+
+/* گرید داده‌های استخر */
+.pool-data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.data-card {
+    padding: 16px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+/* سایدبار تراکنش */
+.action-sidebar {
+    position: sticky;
+    top: 24px;
+}
+
+.transaction-card {
+    padding: 24px;
+    border-radius: 24px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    padding: 16px;
+    background: rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+    border-radius: 16px;
+}
+
+.input-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: var(--color-text-muted);
+}
+
+.input-container input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+}
+
+.plus-divider {
+    display: flex;
+    justify-content: center;
+    margin: -12px 0;
+    z-index: 2;
+    position: relative;
+}
+
+.plus-divider .material-icons {
+    background: var(--color-surface);
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 20px;
+    border: 1px solid var(--color-border);
+}
+
+.price-range-box {
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 12px;
+    background: rgba(var(--color-primary-rgb), 0.05);
+}
+
+/* ریسپانسیو */
+@media (max-width: 992px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .pool-data-grid {
+        grid-template-columns: 1fr;
+    }
+    .pool-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+#livePrice {
+    font-size: 32px; /* سایز بزرگ */
+    font-weight: 800; /* ضخامت زیاد */
+    color: var(--color-text); /* یا هر رنگی که در main دارید */
+    letter-spacing: -1px;
+    margin-top: 4px;
+    display: block;
+}
+
+.stat-item .label {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
