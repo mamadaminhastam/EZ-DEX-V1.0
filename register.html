@@ -26,27 +26,51 @@
 
     <div class="register-container">
         <h1>حساب جدید</h1>
+        <div id="success-message" class="success-message"></div>
 
-        <form>
+        <form id="registerForm" novalidate>
+            
             <div class="m3-textfield">
-                <input type="text" id="reg-username" placeholder=" " required>
+                <input type="text" id="reg-firstname" placeholder=" ">
+                <label for="reg-firstname">نام</label>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="m3-textfield">
+                <input type="text" id="reg-lastname" placeholder=" ">
+                <label for="reg-lastname">نام خانوادگی</label>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="m3-textfield">
+                <input type="text" id="reg-username" placeholder=" ">
                 <label for="reg-username">نام کاربری</label>
-                <div class="supporting-text">از حروف انگلیسی و اعداد استفاده کنید</div>
+                <div class="supporting-text"></div>
+                <div class="error-message"></div>
             </div>
 
             <div class="m3-textfield">
-                <input type="email" id="reg-email" placeholder=" " required>
+                <input type="tel" id="reg-phone" placeholder=" ">
+                <label for="reg-phone">شماره موبایل</label>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="m3-textfield">
+                <input type="email" id="reg-email" placeholder=" ">
                 <label for="reg-email">ایمیل</label>
+                <div class="error-message"></div>
             </div>
 
             <div class="m3-textfield">
-                <input type="password" id="reg-password" placeholder=" " required>
+                <input type="password" id="reg-password" placeholder=" ">
                 <label for="reg-password">رمز عبور</label>
+                <div class="error-message"></div>
             </div>
 
             <div class="m3-textfield">
-                <input type="password" id="reg-confirm-password" placeholder=" " required>
+                <input type="password" id="reg-confirm-password" placeholder=" ">
                 <label for="reg-confirm-password">تکرار رمز عبور</label>
+                <div class="error-message"></div>
             </div>
 
             <button type="submit" class="btn-primary-sm full-width">ثبت نام</button>
@@ -56,6 +80,9 @@
             حساب دارید؟ <a href="login.html">وارد شوید</a>
         </p>
     </div>
+
+    
+    <script src="register.js"></script>
     <script src="main/theme.js"></script>
 </body>
 </html>

@@ -36,13 +36,20 @@
     color: var(--color-text-muted);
 }
 
+/* دکمه بازگشت اختصاصی */
+.btn-text.btn-round {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
 /* نمودار بدون بردر */
 .chart-container.no-border {
     height: 480px;
-    padding: 0; /* حذف پدینگ برای چسبیدن نمودار به لبه */
+    padding: 0;
     overflow: hidden;
     border: none !important;
-    background: #131722; /* رنگ پس‌زمینه استاندارد تریدینگ ویو */
+    background: #131722;
 }
 
 /* گرید داده‌های استخر */
@@ -54,9 +61,29 @@
 }
 
 .data-card {
-    padding: 16px;
+    padding: 20px;
     text-align: center;
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* قیمت لحظه‌ای درشت */
+#livePrice {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -1px;
+    margin-top: 4px;
+    display: block;
+}
+
+.stat-item .label {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    display: block;
 }
 
 /* سایدبار تراکنش */
@@ -138,18 +165,4 @@
         align-items: flex-start;
         gap: 20px;
     }
-}
-#livePrice {
-    font-size: 32px; /* سایز بزرگ */
-    font-weight: 800; /* ضخامت زیاد */
-    color: var(--color-text); /* یا هر رنگی که در main دارید */
-    letter-spacing: -1px;
-    margin-top: 4px;
-    display: block;
-}
-
-.stat-item .label {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
 }

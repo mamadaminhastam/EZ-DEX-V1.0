@@ -13,7 +13,6 @@ body {
     position: relative;
 }
 
-
 .full-width {
     width: 100%;
     display: block;
@@ -27,12 +26,10 @@ body {
     top: 20px;
 }
 
-/* برند (لوگو + متن EZ DEX) */
-
-
 /* کانتینر فرم */
 .register-container {
     margin-top: 60px;
+    margin-bottom: 60px; /* کمی فاصله پایین اضافه شد */
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: 30px;
@@ -45,9 +42,6 @@ h1 {
     color: var(--color-primary);
     margin-bottom: 25px;
 }
-
-/* گروه ورودی‌ها */
-
 
 /* لینک ورود */
 .login-link {
@@ -64,3 +58,56 @@ h1 {
     color: var(--color-secondary);
 }
 
+/* --- استایل‌های جدید برای اعتبارسنجی (Validation) --- */
+
+/* استایل متن خطا */
+.error-message {
+    color: var(--color-error); /* قرمز روشن */
+    font-size: 0.75rem;
+    margin-top: 4px;
+    min-height: 18px; /* ارتفاع رزرو شده تا فرم نپرد */
+    display: none; /* در حالت عادی مخفی */
+    text-align: right;
+}
+
+/* وقتی کلاس error به والد اضافه شود، متن خطا نمایش داده شود */
+.m3-textfield.error .error-message {
+    display: block;
+}
+
+/* وقتی کلاس error داریم، رنگ بوردر اینپوت قرمز شود */
+.m3-textfield.error input {
+    border-color: var(--color-error);
+}
+
+/* تغییر رنگ لیبل در حالت خطا (اختیاری) */
+.m3-textfield.error label {
+    color: var(--color-error);
+}
+
+/* مخفی کردن supporting-text اگر خطا وجود دارد تا شلوغ نشود */
+.m3-textfield.error .supporting-text {
+    display: none;
+}
+/* ... کدهای قبلی ... */
+
+/* استایل پیام موفقیت */
+.success-message {
+    background-color: #d4edda;      /* پس‌زمینه سبز روشن */
+    color: var(--color--success);                /* متن سبز تیره */
+         /* حاشیه سبز */
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    display: none;                  /* در حالت پیش‌فرض مخفی است */
+    opacity: 0;                     /* برای افکت انیمیشن */
+    transition: opacity 0.5s ease;
+}
+
+/* کلاسی که وقتی اضافه شود، پیام ظاهر می‌شود */
+.success-message.visible {
+    display: block;
+    opacity: 1;
+}
