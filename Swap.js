@@ -1,14 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Video Logic ---
-    const video = document.getElementById('swapVideo');
-    if (video) {
-        video.addEventListener('click', () => {
-            video.paused ? video.play() : video.pause();
-        });
-    }
-
-    // --- 2. Elements ---
+    // --- 1. Elements ---
     const swapBtn = document.getElementById('swapBtn');
     const badgeElement = document.getElementById('swapCountBadge');
     const tableBody = document.querySelector('#txTable tbody');
@@ -16,79 +8,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const tokenFromSelect = document.getElementById('tokenFrom');
     const tokenToSelect = document.getElementById('tokenTo');
 
-    // Constants for LocalStorage
-    const STORAGE_KEY_COUNT = 'swap_daily_count';
-    const STORAGE_KEY_DATE = 'swap_last_reset';
+    // Constants
     const STORAGE_KEY_TXS = 'swap_recent_transactions';
-    const RESET_INTERVAL = 24 * 60 * 60 * 1000; // 24 Hours
-    const TX_EXPIRY = 5 * 60 * 1000; // 5 Minutes (زمان مد نظر شما)
+    
+    // --- تنظیمات زمان حذف (به میلی‌ثانیه) ---
+    const REMOVE_TIME = 10000; // ۱۰ ثانیه (بعدا می‌تونی زیادش کنی)
 
-    // --- 3. Functions ---
+    // --- 2. Functions ---
 
-    // بارگذاری تعداد سواپ‌ها و ریست ۲۴ ساعته
-    function loadSwapCount() {
-        const lastReset = localStorage.getItem(STORAGE_KEY_DATE);
-        let count = parseInt(localStorage.getItem(STORAGE_KEY_COUNT)) || 0;
-        const now = Date.now();
-
-        if (!lastReset || (now - lastReset > RESET_INTERVAL)) {
-            count = 0;
-            localStorage.setItem(STORAGE_KEY_COUNT, 0);
-            localStorage.setItem(STORAGE_KEY_DATE, now);
-            localStorage.removeItem(STORAGE_KEY_TXS); // ریست تراکنش‌ها در روز جدید
+    // تابع اصلی برای آپدیت کردن عدد Badge بر اساس لیست تراکنش‌ها
+    function updateBadgeFromStorage() {
+        const transactions = JSON.parse(localStorage.getItem(STORAGE_KEY_TXS)) || [];
+        const count = transactions.length;
+        if (badgeElement) {
+            badgeElement.textContent = count;
+            badgeElement.style.display = count > 0 ? 'flex' : 'none';
         }
-
-        updateBadgeUI(count);
-        return count;
     }
 
-    function updateBadgeUI(count) {
-        if (!badgeElement) return;
-        badgeElement.textContent = count;
-        badgeElement.style.display = count > 0 ? 'flex' : 'none';
-    }
-
-    // ذخیره و لود تراکنش‌ها از LocalStorage
+    // ذخیره تراکنش
     function saveTransaction(tx) {
         let transactions = JSON.parse(localStorage.getItem(STORAGE_KEY_TXS)) || [];
-        transactions.unshift(tx); // اضافه کردن به اول آرایه
+        transactions.unshift(tx);
         localStorage.setItem(STORAGE_KEY_TXS, JSON.stringify(transactions));
+        updateBadgeFromStorage(); // بلافاصله عدد Badge را زیاد کن
     }
 
+    // لود تراکنش‌ها هنگام رفرش صفحه
     function loadTransactions() {
         const transactions = JSON.parse(localStorage.getItem(STORAGE_KEY_TXS)) || [];
         const now = Date.now();
         
-        // پاک کردن ردیف‌های قبلی (به جز استاتیک‌ها اگر مایل بودید)
-        // tableBody.innerHTML = ''; 
+        tableBody.innerHTML = ''; 
 
         transactions.forEach(tx => {
-            // چک کردن محدودیت ۵ دقیقه (کجای کد: TX_EXPIRY در بالا تعریف شده)
-            if (now - tx.timestamp < TX_EXPIRY) {
-                renderRow(tx);
+            const timePassed = now - tx.timestamp;
+            if (timePassed < REMOVE_TIME) {
+                renderRow(tx, REMOVE_TIME - timePassed);
+            } else {
+                // اگر زمانش گذشته بود از حافظه پاک کن
+                removeTxFromStorage(tx.id);
             }
         });
+        updateBadgeFromStorage();
     }
 
-        function renderRow(tx) {
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td>
-                    <span>${tx.id}</span> 
-                    <span class="badge badge-sm"></span>
-                </td>
-                <td>${tx.pair}</td>
-                <td>${tx.amount}</td>
-                <td>${tx.date}</td>
-                <td><span class="status pending">Processing</span></td>
-                <td><button class="btn-view">View</button></td>
-            `;
-            tableBody.prepend(newRow); // اضافه کردن به ابتدای جدول
-        }
+    // حذف تراکنش از LocalStorage
+    function removeTxFromStorage(id) {
+        let transactions = JSON.parse(localStorage.getItem(STORAGE_KEY_TXS)) || [];
+        transactions = transactions.filter(t => t.id !== id);
+        localStorage.setItem(STORAGE_KEY_TXS, JSON.stringify(transactions));
+        updateBadgeFromStorage(); // عدد Badge را کم کن
+    }
 
-    // --- 4. Execution ---
+    // ایجاد ردیف و مدیریت حذف خودکار
+    function renderRow(tx, delay) {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td><span>${tx.id}</span></td>
+            <td>${tx.pair}</td>
+            <td>${tx.amount}</td>
+            <td>${tx.date}</td>
+            <td><span class="status pending">Processing</span></td>
+            <td><button class="btn-view">View</button></td>
+        `;
+        tableBody.prepend(newRow);
 
-    let currentCount = loadSwapCount();
+        // تایمر برای حذف ردیف و کم کردن از Badge
+        setTimeout(() => {
+            newRow.style.opacity = '0';
+            newRow.style.transition = '0.5s';
+            setTimeout(() => {
+                newRow.remove();
+                removeTxFromStorage(tx.id); // حذف از حافظه و آپدیت Badge
+            }, 500);
+        }, delay);
+    }
+
+    // --- 3. Execution ---
+
     loadTransactions();
 
     if (swapBtn) {
@@ -99,20 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // A) Update Counter
-            currentCount++;
-            localStorage.setItem(STORAGE_KEY_COUNT, currentCount);
-            updateBadgeUI(currentCount);
-
-            // B) Create Transaction Object
-         
-          
             const now = new Date();
-
-            // ایجاد تاریخ میلادی به فرمت YYYY-MM-DD
             const datePart = now.toISOString().split('T')[0]; 
-
-            // ایجاد ساعت به فرمت HH:MM
             const timePart = now.getHours().toString().padStart(2, '0') + ":" + 
                             now.getMinutes().toString().padStart(2, '0');
 
@@ -120,13 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: "#TX" + Math.floor(Math.random() * 9000 + 1000),
                 pair: `${tokenFromSelect.value} / ${tokenToSelect.value}`,
                 amount: `${amount} ${tokenFromSelect.value}`,
-                date: `${datePart} ${timePart}`, // ترکیب تاریخ و ساعت
+                date: `${datePart} ${timePart}`,
                 timestamp: Date.now() 
             };
 
-            // C) Save and Show
             saveTransaction(tx);
-            renderRow(tx);
+            renderRow(tx, REMOVE_TIME);
 
             amountFromInput.value = '';
         });

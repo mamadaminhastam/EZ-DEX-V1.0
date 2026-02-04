@@ -1,8 +1,20 @@
 @import url("main/main.css");
 
+/* تنظیمات کلی کانتینر */
 .detail-container {
+    position: relative;
+    /* so absolute children align to container */
     margin: 40px auto;
     max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* back button positioned inside the container (left edge) */
+.detail-container .back-btn {
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    z-index: 10;
 }
 
 /* هدر استخر */
@@ -10,9 +22,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px;
+    padding: 20px 24px;
     margin-bottom: 24px;
-    border-radius: 24px;
+    border-radius: 16px;
 }
 
 .pool-info-group {
@@ -21,101 +33,57 @@
     gap: 12px;
 }
 
-.pair-icons {
-    display: flex;
-    align-items: center;
-}
-
-.pair-icons .material-icons {
-    font-size: 32px;
-    color: var(--color-primary);
-}
-
-.pair-icons .base-coin {
-    margin-left: -12px;
-    color: var(--color-text-muted);
-}
-
-/* دکمه بازگشت اختصاصی */
-.btn-text.btn-round {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-}
-
-/* نمودار بدون بردر */
-.chart-container.no-border {
-    height: 480px;
-    padding: 0;
-    overflow: hidden;
-    border: none !important;
-    background: #131722;
-}
-
-/* گرید داده‌های استخر */
-.pool-data-grid {
+/* چیدمان گرید اصلی - ستون دوم ۳۶۰ پیکسل فیکس */
+.main-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 16px;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
+    align-items: start;
+    /* جلوگیری از کشیده شدن سایدبار */
 }
 
-.data-card {
-    padding: 20px;
-    text-align: center;
+/* بخش نمودار */
+.chart-container.no-border {
+    height: 550px;
     border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    overflow: hidden;
+    background: #131722;
+    border: none 
 }
 
-/* قیمت لحظه‌ای درشت */
-#livePrice {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--color-text);
-    letter-spacing: -1px;
-    margin-top: 4px;
-    display: block;
-}
-
-.stat-item .label {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    display: block;
-}
-
-/* سایدبار تراکنش */
+/* سایدبار عملیات - فیکس کردن ظاهر مستطیلی */
 .action-sidebar {
     position: sticky;
-    top: 24px;
+    top: 20px;
 }
 
 .transaction-card {
-    padding: 24px;
-    border-radius: 24px;
-}
-
-.sidebar-header {
+    padding: 20px;
+    border-radius: 16px ;
+    /* یکنواخت کردن انحنا */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 12px;
 }
 
+.sidebar-header h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* باکس‌های ورودی جمع‌وجور */
 .input-container {
-    padding: 16px;
-    background: rgba(0,0,0,0.1);
-    margin-bottom: 8px;
-    border-radius: 16px;
+    padding: 12px 14px ;
+    border-radius: 12px ;
+    background: rgba(var(--color-primary-rgb), 0.03) ;
+    margin-bottom: 0;
 }
 
 .input-header {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
-    margin-bottom: 8px;
+    font-size: 11px;
+    margin-bottom: 4px;
     color: var(--color-text-muted);
 }
 
@@ -124,16 +92,17 @@
     background: transparent;
     border: none;
     color: var(--color-text);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     outline: none;
 }
 
+/* جداکننده بعلاوه */
 .plus-divider {
     display: flex;
     justify-content: center;
-    margin: -12px 0;
-    z-index: 2;
+    margin: -18px 0;
+    z-index: 5;
     position: relative;
 }
 
@@ -141,28 +110,67 @@
     background: var(--color-surface);
     border-radius: 50%;
     padding: 4px;
-    font-size: 20px;
+    font-size: 18px;
     border: 1px solid var(--color-border);
+    color: var(--color-primary);
 }
 
+/* باکس محدوده قیمت */
 .price-range-box {
     padding: 12px;
-    margin: 16px 0;
-    font-size: 12px;
-    background: rgba(var(--color-primary-rgb), 0.05);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-border);
+    text-align: center;
 }
 
-/* ریسپانسیو */
+.price-range-box .label {
+    display: block;
+    font-size: 10px;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.price-range-box .value {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* دکمه عملیات */
+.action-btn {
+    height: 50px !important;
+    margin-top: 10px;
+    font-size: 15px !important;
+}
+
+/* گرید داده‌های پایین نمودار */
+.pool-data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.data-card {
+    padding: 16px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* قیمت لحظه‌ای */
+#livePrice {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ریسپانسیو برای تبلت و موبایل */
 @media (max-width: 992px) {
     .main-grid {
         grid-template-columns: 1fr;
     }
-    .pool-data-grid {
-        grid-template-columns: 1fr;
-    }
-    .pool-header-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+
+    .action-sidebar {
+        position: static;
+        width: 100%;
     }
 }
