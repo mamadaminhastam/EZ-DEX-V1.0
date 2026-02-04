@@ -18,60 +18,11 @@
 /* ۴. لایه کامپوننت‌های پیچیده */
 @import url("Component/CheckBox_RadioButton.css"); /* طبق تکلیف ۲ */
 @import url("Component/table.css");
-
+@import url("Component/navbar.css");
 /* ========== Navbar (Global Component) ========== */
 
-.navbar {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 40px;
-    background: var(--color-surface);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-border);
-}
-
 /* هرچیزی داخل navbar */
-.navbar * {
-    box-sizing: border-box;
-}
 
-/* برند */
-.navbar .brand {
-    display: flex;
-    
-    align-items: center;
-    gap: 10px;
-    color: var(--color-primary);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.navbar .brand  {
-    height: 28px;
-    width: 28px;
-}
-
-/* منو */
-.navbar nav {
-    display: flex;
-    align-items: center;
-    direction: ltr;
-}
-
-.navbar nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--color-text-muted);
-    transition: 0.3s;
-}
-
-.navbar nav a:hover,
-.navbar nav a.active {
-    color: var(--color-primary);
-}
 .brand img {
     height: 53px;
     width: 53px;
@@ -91,4 +42,6 @@ body {
     font-family: var(--font-family-main); /* یا هر متغیری که در fonts.css داری */
     line-height: 1.6;
     direction: rtl; /* چون سایت فارسی است */
+    max-width: 100%;
+
 }

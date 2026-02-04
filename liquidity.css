@@ -52,7 +52,7 @@ body {
 /* Grid */
 .pair-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     margin-top: 24px;
 }
@@ -171,11 +171,35 @@ body {
 }
 
 /* ریسپانسیو برای موبایل */
+/* ریسپانسیو کامل برای موبایل */
 @media (max-width: 768px) {
+    /* ۱. ستون‌های گرید را در موبایل تک‌ستونه می‌کنیم */
+    .pair-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    /* ۲. اصلاح بخش فیلترها */
     .controls-top-row {
         flex-direction: column;
     }
     .controls-top-row .m3-select {
         width: 100%;
+    }
+
+    /* ۳. اصلاح بخش راهنما (آن عکس بزرگ که فضا را می‌گرفت) */
+    .info-content {
+        flex-direction: column; /* عکس و متن زیر هم بیفتند */
+        text-align: center;
+    }
+
+    .info-content img {
+        width: 120px; /* کوچک کردن عکس در موبایل */
+        height: 120px;
+    }
+
+    /* ۴. کانتینر اصلی */
+    .container {
+        margin: 30px auto;
+        padding: 0 15px;
     }
 }
