@@ -198,9 +198,9 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(18, 18, 18, 0.85);
+    background: var(--color-background);
     backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--color-purple-fade);
     padding: 12px 0;
     z-index: 1000;
     overflow: hidden;
@@ -237,7 +237,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    color: #e0e0e0;
+    color: var(--color-text-muted);
 }
 
 .ticker-item img {
@@ -251,9 +251,13 @@ body {
 }
 
 .price-val {
-    color: #10B981;
+    color: var(--color-success);
     font-weight: bold;
 }
 .price-ticker-footer {
     contain: layout paint;
+}
+.ticker-content {
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
