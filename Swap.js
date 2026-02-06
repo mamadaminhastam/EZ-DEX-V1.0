@@ -338,5 +338,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initTicker();
     updateTickerPrices();
     // هر ۶۰ ثانیه آپدیت کن تا تداخل انیمیشن پیش نیاید
-    setInterval(updateTickerPrices, 180000);
+    setInterval(updateTickerPrices, 240000);
 });   

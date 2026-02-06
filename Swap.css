@@ -154,12 +154,12 @@ body {
 }
 
 .status.completed {
-    background: rgba(16, 185, 129, 0.15);
+    background: var(--color-success-light);
     color: var(--color-success);
 }
 
 .status.pending {
-    background: rgba(251, 191, 36, 0.15);
+    background: var(--color-background);
     color: var(--color-warning);
 }
 

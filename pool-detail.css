@@ -174,3 +174,71 @@
         width: 100%;
     }
 }
+.price-ticker-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-background);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--color-purple-fade);
+    padding: 12px 0;
+    z-index: 1000;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker-content {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll-right 60s linear infinite;
+    will-change: transform;
+}
+
+@keyframes ticker-scroll-right {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(33.3333%);
+    }
+}
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.ticker-item img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.gas-icon {
+    font-size: 18px;
+}
+
+.price-val {
+    color: var(--color-success);
+    font-weight: bold;
+}
+.price-ticker-footer {
+    contain: layout paint;
+}
+.ticker-content {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
