@@ -29,7 +29,8 @@ body {
 /* کانتینر فرم */
 .register-container {
     margin-top: 60px;
-    margin-bottom: 60px; /* کمی فاصله پایین اضافه شد */
+    margin-bottom: 60px;
+    /* کمی فاصله پایین اضافه شد */
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: 30px;
@@ -62,11 +63,14 @@ h1 {
 
 /* استایل متن خطا */
 .error-message {
-    color: var(--color-error); /* قرمز روشن */
+    color: var(--color-error);
+    /* قرمز روشن */
     font-size: 0.75rem;
     margin-top: 4px;
-    min-height: 18px; /* ارتفاع رزرو شده تا فرم نپرد */
-    display: none; /* در حالت عادی مخفی */
+    min-height: 18px;
+    /* ارتفاع رزرو شده تا فرم نپرد */
+    display: none;
+    /* در حالت عادی مخفی */
     text-align: right;
 }
 
@@ -89,20 +93,25 @@ h1 {
 .m3-textfield.error .supporting-text {
     display: none;
 }
+
 /* ... کدهای قبلی ... */
 
 /* استایل پیام موفقیت */
 .success-message {
-    background-color: #d4edda;      /* پس‌زمینه سبز روشن */
-    color: var(--color--success);                /* متن سبز تیره */
-         /* حاشیه سبز */
+    background-color: rgba(16, 185, 129, 0.15);
+    /* پس‌زمینه سبز روشن */
+    color: var(--color-success);
+    /* متن سبز تیره */
+    /* حاشیه سبز */
     padding: 12px;
     margin-bottom: 20px;
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    display: none;                  /* در حالت پیش‌فرض مخفی است */
-    opacity: 0;                     /* برای افکت انیمیشن */
+    display: none;
+    /* در حالت پیش‌فرض مخفی است */
+    opacity: 0;
+    /* برای افکت انیمیشن */
     transition: opacity 0.5s ease;
 }
 

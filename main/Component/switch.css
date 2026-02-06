@@ -6,9 +6,11 @@
     vertical-align: middle;
     cursor: pointer;
     position: relative;
-    width: 52px;  /* طبق استاندارد M3 */
+    width: 52px;
+    /* طبق استاندارد M3 */
     height: 32px;
-    direction: ltr; /* جهت همیشه چپ به راست باشد (راست=روشن) */
+    direction: ltr;
+    /* جهت همیشه چپ به راست باشد (راست=روشن) */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -23,10 +25,15 @@
 /* 1. Track (بدنه اصلی) */
 .m3-switch .track {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--color-surface);
-    border: 2px solid var(--color-text-muted); /* رنگ بوردر در حالت خاموش */
-    border-radius: 100px; /* شکل کپسولی */
+    border: 2px solid var(--color-text-muted);
+    /* رنگ بوردر در حالت خاموش */
+    border-radius: 100px;
+    /* شکل کپسولی */
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -34,9 +41,11 @@
 .m3-switch .handle {
     position: absolute;
     top: 50%;
-    left: 6px; /* فاصله اولیه */
+    left: 6px;
+    /* فاصله اولیه */
     transform: translateY(-50%);
-    width: 16px; /* سایز هندل در حالت خاموش */
+    width: 16px;
+    /* سایز هندل در حالت خاموش */
     height: 16px;
     background-color: var(--color-text-muted);
     border-radius: 50%;
@@ -49,30 +58,36 @@
 /* آیکون داخل هندل (تیک) */
 .m3-switch .handle .material-icons {
     font-size: 16px;
-    color: var(--color-primary); /* رنگ تیک */
-    opacity: 0; /* در حالت خاموش دیده نشود */
+    color: var(--color-primary);
+    /* رنگ تیک */
+    opacity: 0;
+    /* در حالت خاموش دیده نشود */
     transform: scale(0);
     transition: all 0.2s;
 }
 
 /* --- حالت Checked (روشن) --- */
-.m3-switch input:checked + .track {
+.m3-switch input:checked+.track {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
 }
 
-.m3-switch input:checked + .track .handle {
-    background-color: #ffffff; /* رنگ هندل روشن */
-    left: calc(100% - 28px); /* محاسبه دقیق محل قرارگیری */
-    width: 24px; /* هندل بزرگ می‌شود */
+.m3-switch input:checked+.track .handle {
+    background-color: var(--color-white);
+    /* رنگ هندل روشن */
+    left: calc(100% - 28px);
+    /* محاسبه دقیق محل قرارگیری */
+    width: 24px;
+    /* هندل بزرگ می‌شود */
     height: 24px;
 }
 
 /* نمایش آیکون تیک در حالت روشن */
-.m3-switch input:checked + .track .handle .material-icons {
+.m3-switch input:checked+.track .handle .material-icons {
     opacity: 1;
     transform: scale(1);
-    color: var(--color-primary); /* رنگ آیکون */
+    color: var(--color-primary);
+    /* رنگ آیکون */
     font-weight: bold;
 }
 
@@ -90,7 +105,7 @@
 }
 
 /* Focus: خط دور ترک */
-.m3-switch input:focus-visible + .track {
+.m3-switch input:focus-visible+.track {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
@@ -102,17 +117,18 @@
 }
 
 /* Disabled: غیرفعال */
-.m3-switch input:disabled + .track {
+.m3-switch input:disabled+.track {
     opacity: 0.38;
     cursor: not-allowed;
-    background-color: rgba(255,255,255,0.12);
+    background-color: rgba(255, 255, 255, 0.12);
     border-color: transparent;
 }
 
-.m3-switch input:disabled + .track .handle {
+.m3-switch input:disabled+.track .handle {
     opacity: 0.38;
-    background-color: #e0e0e0;
+    background-color: var(--color-border-light);
 }
+
 .m3-switch.disabled {
     cursor: not-allowed;
 }

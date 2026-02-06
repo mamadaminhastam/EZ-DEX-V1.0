@@ -1,7 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registerForm');
-    const successMessageDiv = document.getElementById('success-message'); // دریافت المنت پیام موفقیت
-    
+    let successMessageDiv = document.getElementById('success-message'); // دریافت المنت پیام موفقیت
+    if (!successMessageDiv) {
+        successMessageDiv = document.createElement('div');
+        successMessageDiv.id = 'success-message';
+        successMessageDiv.className = 'success-message';
+        // Inline safety styles so it doesn't overlap inputs and is visible
+        successMessageDiv.style.position = 'relative';
+        successMessageDiv.style.zIndex = '2';
+        successMessageDiv.style.padding = '10px 12px';
+        successMessageDiv.style.marginBottom = '12px';
+        successMessageDiv.style.borderRadius = '8px';
+        successMessageDiv.style.background = 'var(--color-overlay)';
+        successMessageDiv.style.color = 'var(--color-text)';
+        form.parentElement.insertBefore(successMessageDiv, form);
+    }
+
     const firstNameInput = document.getElementById('reg-firstname');
     const lastNameInput = document.getElementById('reg-lastname');
     const usernameInput = document.getElementById('reg-username');
@@ -57,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const confirmPasswordValue = confirmPasswordInput.value.trim();
 
         // بررسی نام
-        if(firstNameValue === '') {
+        if (firstNameValue === '') {
             setError(firstNameInput, 'وارد کردن نام الزامی است');
             isValid = false;
         } else if (firstNameValue.length < 3) {
@@ -68,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // بررسی نام خانوادگی
-        if(lastNameValue === '') {
+        if (lastNameValue === '') {
             setError(lastNameInput, 'وارد کردن نام خانوادگی الزامی است');
             isValid = false;
         } else if (lastNameValue.length < 3) {
@@ -79,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // بررسی نام کاربری
-        if(usernameValue === '') {
+        if (usernameValue === '') {
             setError(usernameInput, 'نام کاربری الزامی است');
             isValid = false;
         } else if (!isValidUsername(usernameValue)) {
@@ -90,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // بررسی موبایل
-        if(phoneValue === '') {
+        if (phoneValue === '') {
             setError(phoneInput, 'شماره موبایل الزامی است');
             isValid = false;
         } else if (!isValidIranianMobile(phoneValue)) {
@@ -101,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // بررسی ایمیل
-        if(emailValue === '') {
+        if (emailValue === '') {
             setError(emailInput, 'ایمیل الزامی است');
             isValid = false;
         } else if (!isValidEmail(emailValue)) {
@@ -112,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // بررسی پسورد
-        if(passwordValue === '') {
+        if (passwordValue === '') {
             setError(passwordInput, 'رمز عبور الزامی است');
             isValid = false;
         } else if (passwordValue.length < 8) {
@@ -123,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // بررسی تکرار پسورد
-        if(confirmPasswordValue === '') {
+        if (confirmPasswordValue === '') {
             setError(confirmPasswordInput, 'تکرار رمز عبور الزامی است');
             isValid = false;
         } else if (confirmPasswordValue !== passwordValue) {
@@ -141,11 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         // اگر اعتبارسنجی صحیح بود
-        if(validateInputs()) {
+        if (validateInputs()) {
             // 1. نمایش پیام موفقیت
             successMessageDiv.innerText = 'حساب کاربری با موفقیت ساخته شد. در حال انتقال...';
             successMessageDiv.classList.add('visible'); // نمایش با افکت
-            
+
             // 2. غیرفعال کردن دکمه سابمیت (برای جلوگیری از کلیک مجدد)
             const submitBtn = form.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
@@ -154,7 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // 3. اسکرول به بالای فرم تا پیام دیده شود (اگر فرم طولانی باشد)
             successMessageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-            // 4. انتقال به صفحه swap.html بعد از 2 ثانیه (2000 میلی‌ثانیه)
+            // 4. ذخیره فلگ موقت و انتقال به صفحه swap.html بعد از 2 ثانیه (2000 میلی‌ثانیه)
+            try {
+                sessionStorage.setItem('justRegistered', 'true');
+                // ذخیره نام کاربری برای نمایش خوش‌آمدگویی در صفحه بعد (اختیاری)
+                sessionStorage.setItem('registeredUser', usernameValue || emailValue || '');
+            } catch (err) {
+                // ignore storage errors
+            }
             setTimeout(() => {
                 window.location.href = 'swap.html';
             }, 2000);
@@ -165,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = [firstNameInput, lastNameInput, usernameInput, phoneInput, emailInput, passwordInput, confirmPasswordInput];
     inputs.forEach(input => {
         input.addEventListener('input', () => {
-            if(input.parentElement.classList.contains('error')) {
+            if (input.parentElement.classList.contains('error')) {
                 setSuccess(input);
             }
         });

@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ DEX - Swap</title>
 
-    
+
     <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="swap.css">
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="brand">
-        <img src="main/Theme/images/logo.png" alt="EZ DEX Logo" >
-        <span>EZ DEX</span>
-    </div>
-
-    <div class="hamburger-menu">
-        <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header class="navbar">
+        <div class="brand">
+            <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
+            <span>EZ DEX</span>
         </div>
-        <nav class="nav-links">
-            <a class="active badge-container" href="#">
-                Swap
-                <span id="swapCountBadge" class="badge badge-lg" style="display: none;">0</span>
-            </a>
-            <a href="liquidity.html">Liquidity</a>
-            <a href="staking.html">Staking</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="setting.html">Settings</a>
-        </nav>
-    </div>
-</header>
 
-<main class="container">
+        <div class="hamburger-menu">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links">
+                <a class="active badge-container" href="#">
+                    Swap
+                    <span id="swapCountBadge" class="badge badge-lg" style="display: none;">0</span>
+                </a>
+                <a href="liquidity.html">Liquidity</a>
+                <a href="staking.html">Staking</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+                <a href="setting.html">Settings</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="swap-card">
+    <main class="container">
+
+        <div class="swap-card">
             <h2>Swap Tokens</h2>
 
             <div class="swap-row">
@@ -49,8 +51,9 @@
                 </div>
                 <select class="m3-select" id="tokenFrom">
                     <option value="ETH">ETH</option>
-                    <option value="USDT">USDT</option>
                     <option value="WBTC">WBTC</option>
+                    <option value="USDT">USDT</option>
+                    <option value="WETH">WETH</option>
                 </select>
             </div>
 
@@ -63,43 +66,52 @@
                 </div>
                 <select class="m3-select" id="tokenTo">
                     <option value="USDT">USDT</option>
+                    <option value="WBTC">WBTC</option>
                     <option value="ETH">ETH</option>
                     <option value="WETH">WETH</option>
                 </select>
             </div>
 
             <button id="swapBtn" class="btn-primary-sm full-width">Swap</button>
-        <div class="guide">
-            <img src="main/Theme/images/swap.png" alt="">
-            <p class="guide-text">
-                برای آموزش نحوه تبدیل ارزها، ویدیو را مشاهده کنید.
-            </p>
+            <div class="guide">
+                <img src="main/Theme/images/swap.png" alt="">
+                <p class="guide-text">
+                   سواپ کردن یعنی تبدیل یک توکن به توکن دیگر. شما مقداری از یک ارز دیجیتال را وارد می‌کنید و در ازای آن، مقدار معادل ارز دیجیتال دیگری را دریافت می‌کنید. این فرآیند معمولاً در صرافی‌های غیرمتمرکز (DEX) انجام می‌شود و به شما امکان می‌دهد بدون نیاز به واسطه، دارایی‌های خود را مدیریت کنید.
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="recent-transactions">
-        <h2>Recent Transactions</h2>
+        <div class="recent-transactions">
+            <h2>Recent Transactions</h2>
 
-                <table class="material-table" id="txTable">
-                 <thead>
+            <table class="material-table" id="txTable">
+                <thead>
                     <tr>
-                     <th>ID</th>
-                     <th>Pair</th>
-                     <th>Amount</th>
-                     <th>Time</th>
-                     <th>Status</th>
-                     <th>Action</th>
+                        <th>ID</th>
+                        <th>Pair</th>
+                        <th>Amount</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
-                 </thead>
-                 <tbody>
-                 </tbody>
-                </table>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+<footer class="price-ticker-footer">
+    <div class="ticker-wrapper">
+        <div id="tickerContent" class="ticker-content">
+            </div>
     </div>
+</footer>
+</footer>
+    <script src="swap.js"></script>
+    <script src="main/theme.js"></script>
 
-</main>
-
-<script src="swap.js"></script>
-<script src="main/theme.js"></script>
 
 </body>
+
 </html>

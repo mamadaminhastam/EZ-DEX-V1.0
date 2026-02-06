@@ -13,11 +13,12 @@
     right: 30px;
     width: 56px;
     height: 56px;
-    border-radius: 16px; 
+    border-radius: 16px;
     background-color: var(--color-primary-container);
     color: var(--color-on-primary-container);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    display: none; /* در ابتدا مخفی است و با JS ظاهر می‌شود */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    /* در ابتدا مخفی است و با JS ظاهر می‌شود */
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -27,9 +28,10 @@
 }
 
 .fab:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-    background-color: var(--color-primary); /* تغییر رنگ در هاور */
-    color: white;
+    box-shadow: 0 6px 12px var(--color-overlay-dark);
+    background-color: var(--color-primary);
+    /* تغییر رنگ در هاور */
+    color: var(--color-white);
 }
 
 /* دکمه‌های آیکون معمولی (مثلاً برای بستن یا تنظیمات) */

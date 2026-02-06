@@ -41,7 +41,7 @@
 }
 
 /* وضعیت ENABLED و CHECKED */
-.m3-selection-control input:checked + .checkbox-container {
+.m3-selection-control input:checked+.checkbox-container {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
 }
@@ -49,11 +49,11 @@
 /* آیکون تیک متریال */
 .checkbox-container .material-icons {
     font-size: 16px;
-    color: white;
+    color: var(--color-white);
     display: none;
 }
 
-.m3-selection-control input:checked + .checkbox-container .material-icons {
+.m3-selection-control input:checked+.checkbox-container .material-icons {
     display: block;
 }
 
@@ -63,7 +63,7 @@
 }
 
 /* وضعیت FOCUS */
-.m3-selection-control input:focus-visible + .checkbox-container {
+.m3-selection-control input:focus-visible+.checkbox-container {
     outline: 2px solid var(--color-primary);
     outline-offset: 4px;
 }
@@ -74,7 +74,7 @@
 }
 
 /* وضعیت DISABLED */
-.m3-selection-control input:disabled ~ * {
+.m3-selection-control input:disabled~* {
     opacity: 0.38;
     cursor: not-allowed;
 }

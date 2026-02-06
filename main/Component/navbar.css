@@ -4,16 +4,20 @@
 .navbar {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* وسط چین کردن خود نوبار در صفحه */
+    margin: 0 auto;
+    /* وسط چین کردن خود نوبار در صفحه */
     padding: 15px 40px;
     background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
-    
+
     /* فلکس باکس برای چیدمان داخلی */
     display: flex;
-    justify-content: space-between; /* لوگو سمت چپ، منو سمت راست */
-    align-items: center; /* دقیقاً در راستای عمودی وسط باشند */
-    height: 80px; /* ارتفاع ثابت برای جلوگیری از پرش */
+    justify-content: space-between;
+    /* لوگو سمت چپ، منو سمت راست */
+    align-items: center;
+    /* دقیقاً در راستای عمودی وسط باشند */
+    height: 80px;
+    /* ارتفاع ثابت برای جلوگیری از پرش */
 }
 
 /* ۲. استایل لوگو و برند */
@@ -23,12 +27,15 @@
     gap: 10px;
     color: var(--color-primary);
     font-size: 20px;
-    font-weight: 700; /* بولدتر برای زیبایی */
-    text-decoration: none; /* حذف زیرخط اگر لینک شد */
+    font-weight: 700;
+    /* بولدتر برای زیبایی */
+    text-decoration: none;
+    /* حذف زیرخط اگر لینک شد */
 }
 
 .navbar .brand img {
-    height: 40px; /* سایز فیکس عکس */
+    height: 40px;
+    /* سایز فیکس عکس */
     width: auto;
 }
 
@@ -36,24 +43,29 @@
 .hamburger-menu {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* هل دادن به سمت راست */
-    position: relative; /* برای اورلی موبایل ضروری است */
+    justify-content: flex-end;
+    /* هل دادن به سمت راست */
+    position: relative;
+    /* برای اورلی موبایل ضروری است */
 }
 
 .hamburger-icon {
-    display: none; /* در دسکتاپ مخفی */
+    display: none;
+    /* در دسکتاپ مخفی */
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
     padding: 5px;
-    z-index: 1001; /* بالاتر از منوی باز شده */
+    z-index: 1001;
+    /* بالاتر از منوی باز شده */
 }
 
 .hamburger-icon span {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: var(--color-text); /* رنگ متن عادی */
+    background-color: var(--color-text);
+    /* رنگ متن عادی */
     border-radius: 4px;
     transition: all 0.3s ease;
 }
@@ -62,7 +74,8 @@
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 24px; /* فاصله بین لینک‌ها */
+    gap: 24px;
+    /* فاصله بین لینک‌ها */
     margin: 0;
     padding: 0;
     direction: ltr;
@@ -77,7 +90,8 @@
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px; /* فاصله متن از بج */
+    gap: 8px;
+    /* فاصله متن از بج */
 }
 
 .nav-links a:hover,
@@ -91,7 +105,8 @@
 
 @media screen and (max-width: 768px) {
     .navbar {
-        padding: 10px 20px; /* فضای کمتر در موبایل */
+        padding: 10px 20px;
+        /* فضای کمتر در موبایل */
         position: relative;
     }
 
@@ -118,15 +133,17 @@
 
     /* منوی اصلی در موبایل */
     .nav-links {
-        display: none; 
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* چسبیده به زیر هدر */
+        top: 100%;
+        /* چسبیده به زیر هدر */
         left: 0;
-        width: 100vw; /* عرض کل صفحه گوشی */
+        width: 100vw;
+        /* عرض کل صفحه گوشی */
         background: var(--color-surface);
         border-bottom: 2px solid var(--color-primary);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 20px var(--color-overlay-dark);
         padding: 10px 0;
         z-index: 1000;
         direction: ltr;

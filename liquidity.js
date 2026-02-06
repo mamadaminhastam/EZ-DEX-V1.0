@@ -2,29 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const cards = document.querySelectorAll('.liquidity-card');
 
-    // --- ۱. منطق سیستم ستاره دهی (Rating) ---
-    const ratingGroups = document.querySelectorAll('.star-rating');
-    ratingGroups.forEach(group => {
-        const stars = group.querySelectorAll('.star-btn');
-        stars.forEach(star => {
-            star.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation(); // جلوگیری از رفتن به صفحه جزئیات هنگام امتیاز دادن
-                const currentIndex = parseInt(star.getAttribute('data-index'));
-                stars.forEach(s => {
-                    const sIndex = parseInt(s.getAttribute('data-index'));
-                    const icon = s.querySelector('.material-icons');
-                    if (sIndex <= currentIndex) {
-                        s.classList.add('active');
-                        icon.textContent = 'star';
-                    } else {
-                        s.classList.remove('active');
-                        icon.textContent = 'star_border';
-                    }
-                });
-            });
-        });
-    });
+
 
     // --- ۲. منطق دکمه Back to Top ---
     const backToTopBtn = document.getElementById('backToTop');
@@ -50,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function filterPools() {
         if (!searchInput) return;
-        const searchTerm = searchInput.value.toLowerCase().trim();
+        const searchTerm = searchInput.value.toLowerCase().trim();//btc,BTC
         const activeChip = document.querySelector('.chip.active');
-        const activeCategory = activeChip ? activeChip.textContent.trim() : 'همه';
+        const activeCategory = activeChip ? activeChip.textContent.trim() : 'همه';//روی کدام دمکه کلیک کردی ؟ 
 
         cards.forEach(card => {
             const poolName = card.getAttribute('data-name') ? card.getAttribute('data-name').toLowerCase() : "";
@@ -66,13 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (searchInput) {
-        searchInput.addEventListener('input', filterPools);
+        searchInput.addEventListener('input', filterPools);//برای جست و جوی لحظه ای 
     }
 
     chips.forEach(chip => {
         chip.addEventListener('click', () => {
+            //اول از همه active  رو از روی همه بر میداره 
             chips.forEach(c => c.classList.remove('active'));
+            //فعال کردن چیپ کلیک شده
             chip.classList.add('active');
+            //اجرای فیلتر
             filterPools();
         });
     });
@@ -103,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return 0;
             });
 
-            cardsArray.forEach(card => grid.appendChild(card));
+            cardsArray.forEach(card => grid.appendChild(card));//جابه جایی فیزیکی در صفحه 
         });
     }
 

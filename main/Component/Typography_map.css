@@ -3,7 +3,7 @@
 
 /* پایه کل سایت */
 body {
-    font-family:  Vazirmatn,sans-serif;
+    font-family: var(--font-family-main);
     font-size: var(--md-sys-typescale-body-medium-size);
     line-height: var(--md-sys-typescale-body-medium-line-height);
     font-weight: var(--md-sys-typescale-body-medium-weight);
@@ -27,7 +27,7 @@ h1 {
     font-size: var(--md-sys-typescale-display-large-size);
     line-height: var(--md-sys-typescale-display-large-line-height);
     font-weight: var(--md-sys-typescale-display-large-weight);
-    
+
 }
 
 h2 {

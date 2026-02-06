@@ -1,75 +1,82 @@
 /* ===== Global Buttons ===== */
 button,
 .btn {
-    font-family: Vazirmatn, sans-serif; /* از تایپوگرافی استفاده می‌کنیم */
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s, border 0.3s;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px; /* فاصله آیکون و متن */
-    text-decoration: none;
+  font-family: var(--font-family-main);
+  /* از متغیر مرکزی استفاده می‌کنیم */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  /* فاصله آیکون و متن */
+  text-decoration: none;
 }
 
 /* ========= Filled Button ========= */
 .btn-filled {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    padding: 10px 20px;
-    font-weight: 500;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 10px 20px;
+  font-weight: 500;
 }
 
 .btn-filled:hover {
-    background-color: var(--color-primary-hover);
+  background-color: var(--color-primary-hover);
 }
 
 /* ========= Outlined Button ========= */
 .btn-outlined {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    padding: 10px 20px;
-    font-weight: 500;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 10px 20px;
+  font-weight: 500;
 }
 
 .btn-outlined:hover {
-    background-color: var(--color-primary-hover-bg); /* کمی رنگ پس‌زمینه برای هاور */
+  background-color: var(--color-primary-hover-bg);
+  /* کمی رنگ پس‌زمینه برای هاور */
 }
+
 /* ========= Text Button ========= */
 /* Tonal */
 .btn.tonal {
-  background: #050158; /* secondary-container */
-  color: white;
+  background: var(--color-secondary);
+  /* secondary-container */
+  color: var(--color-white);
 }
+
 /* ========= Text Button ========= */
 .btn-text {
-    background-color: transparent;
-    color: var(--color-primary);
-    padding: 8px 12px;
-    font-weight: 500;
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 8px 12px;
+  font-weight: 500;
 }
 
 .btn-text:hover {
-    background-color: var(--color-primary-hover-bg-light);
+  background-color: var(--color-primary-hover-bg-light);
 }
 
 /* ========= Sizes ========= */
 .btn-small {
-    padding: 6px 12px;
-    font-size: var(--md-sys-typescale-label-small-size);
+  padding: 6px 12px;
+  font-size: var(--md-sys-typescale-label-small-size);
 }
 
 .btn-medium {
-    padding: 10px 20px;
-    font-size: var(--md-sys-typescale-label-medium-size);
+  padding: 10px 20px;
+  font-size: var(--md-sys-typescale-label-medium-size);
 }
 
 .btn-large {
-    padding: 14px 28px;
-    font-size: var(--md-sys-typescale-label-large-size);
+  padding: 14px 28px;
+  font-size: var(--md-sys-typescale-label-large-size);
 }
+
 .btn-primary-filled {
   background: var(--color-primary);
   color: var(--color-on-primary);
@@ -89,51 +96,59 @@ button,
 .btn-primary-filled:hover {
   background: var(--color-secondary);
 }
+
 /* Primary Filled Button — Small */
 /* اصلاح کلاس دکمه کوچک برای تراز شدن دقیق متن */
 .btn-primary-sm {
-    background: var(--color-primary);
-    color: var(--color-on-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 
-    padding: 8px 16px;   /* کمی پدینگ را متقارن‌تر کردیم */
-    border-radius: 8px;
-    border: none;
+  padding: 8px 16px;
+  /* کمی پدینگ را متقارن‌تر کردیم */
+  border-radius: 8px;
+  border: none;
 
-    font-size: 14px;  
-    font-weight: 600;   
-    
-    /* تغییر مهم: برای تراز عمودی دقیق، line-height را 1 قرار می‌دهیم */
-    line-height: 1;
+  font-size: 14px;
+  font-weight: 600;
 
-    display: inline-flex;
-    align-items: center;    /* تراز عمودی */
-    justify-content: center; /* تراز افقی */
-    
-    /* جلوگیری از به هم ریختگی تگ a */
-    vertical-align: middle;
-    text-align: center;
+  /* تغییر مهم: برای تراز عمودی دقیق، line-height را 1 قرار می‌دهیم */
+  line-height: 1;
 
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  /* تراز عمودی */
+  justify-content: center;
+  /* تراز افقی */
+
+  /* جلوگیری از به هم ریختگی تگ a */
+  vertical-align: middle;
+  text-align: center;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 /* هماهنگی هاور با رنگ دکمه سواپ */
 .btn-primary-sm:hover {
-    background: var(--color-secondary);
-    /* اگر در colors.css متغیر color-primary-hover داری از آن استفاده کن */
+  background: var(--color-secondary);
+  /* اگر در colors.css متغیر color-primary-hover داری از آن استفاده کن */
 }
+
 /* ===============================
    Shapes (Material Shape)
    ← وابسته به shape.css
 ================================ */
 .btn-round {
-  border-radius: var(--md-sys-shape-large); /* گرد */
+  border-radius: var(--md-sys-shape-large);
+  /* گرد */
 }
 
 .btn-square {
-  border-radius: var(--md-sys-shape-corner-none-default-size); /* مربعی */
+  border-radius: var(--md-sys-shape-corner-none-default-size);
+  /* مربعی */
 }
+
 /* ===============================
    States (Material States)
 ================================ */
@@ -161,7 +176,7 @@ button,
 .is-focus:focus,
 .is-focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.35);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
 }
 
 /* Pressed / Active */

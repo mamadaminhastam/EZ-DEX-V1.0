@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,64 +13,66 @@
 
 <body>
     <header class="navbar">
-    <div class="brand">
-        <img src="main/Theme/images/logo.png" alt="EZ DEX Logo" >
-        <span>EZ DEX</span>
-    </div>
-
-    <div class="hamburger-menu">
-        <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="brand">
+            <img src="main/Theme/images/logo.png" alt="EZ DEX Logo">
+            <span>EZ DEX</span>
         </div>
-    <nav class="nav-links">
-            <a href="swap.html">Swap</a>
-            <a href="liquidity.html">Liquidity</a>
-            <a href="staking.html">Staking</a>
-            <a href="register.html">Register</a>
-            <a class="active" href="#">Login</a>
-            <a href="setting.html">Settings</a>
-        </nav>
+
+        <div class="hamburger-menu">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="swap.html">Swap</a>
+                <a href="liquidity.html">Liquidity</a>
+                <a href="staking.html">Staking</a>
+                <a href="register.html">Register</a>
+                <a class="active" href="#">Login</a>
+                <a href="setting.html">Settings</a>
+            </nav>
     </header>
-    <main class="container">  
-     <div class="login-container">
-        <h1>وارد شوید</h1>
+    <main class="container">
+        <div class="login-container">
+            <h1>وارد شوید</h1>
 
-        <form>
-            <div class="m3-textfield">
-                <input type="text" id="login-email" placeholder=" " required>
-                <label for="login-email">ایمیل یا نام کاربری</label>
-                <div class="supporting-text">نام کاربری خود را وارد کنید</div>
-            </div>
+            <form>
+                <div class="m3-textfield">
+                    <input type="text" id="login-email" placeholder=" " required>
+                    <label for="login-email">ایمیل یا نام کاربری</label>
+                    <div class="supporting-text">نام کاربری خود را وارد کنید</div>
+                </div>
 
-            <div class="m3-textfield">
-                <input type="password" id="login-password" placeholder=" " required>
-                <label for="login-password">رمز عبور</label>
-                <div class="supporting-text">رمز عبور حداقل ۸ کاراکتر باشد</div>
-            </div>
+                <div class="m3-textfield">
+                    <input type="password" id="login-password" placeholder=" " required>
+                    <label for="login-password">رمز عبور</label>
+                    <div class="supporting-text">رمز عبور حداقل ۸ کاراکتر باشد</div>
+                </div>
 
-            <div class="row-between">
-                <label class="m3-selection-control">
-                    <div class="state-layer">
-                        <input type="checkbox" id="remember-me">
-                        <div class="checkbox-container">
-                            <span class="material-icons">check</span>
+                <div class="row-between">
+                    <label class="m3-selection-control">
+                        <div class="state-layer">
+                            <input type="checkbox" id="remember-me">
+                            <div class="checkbox-container">
+                                <span class="material-icons">check</span>
+                            </div>
                         </div>
-                    </div>
-                    <span>مرا به خاطر بسپار</span>
-                </label>
-                <a class="forgot" href="forget-password.html">فراموشی رمز؟</a>
-            </div>
+                        <span>مرا به خاطر بسپار</span>
+                    </label>
+                    <a class="forgot" href="forget-password.html">فراموشی رمز؟</a>
+                </div>
 
-            <button type="submit" class="btn-primary-sm full-width">ورود</button>
-        </form>
+                <button type="submit" class="btn-primary-sm full-width">ورود</button>
+            </form>
 
-        <p class="register-link">
-            حساب ندارید؟ <a href="register.html">ثبت نام کنید</a>
-        </p>
-     </div>
-    </main>  
+            <p class="register-link">
+                حساب ندارید؟ <a href="register.html">ثبت نام کنید</a>
+            </p>
+        </div>
+    </main>
     <script src="main/theme.js"></script>
+    <script src="login.js"></script>
 </body>
+
 </html>

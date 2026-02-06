@@ -6,32 +6,75 @@
     --color-on-primary: #FFFFFF;
     --color-secondary: #4338CA;
     --color-accent: #06B6D4;
-    
-    --color-background: #0B0E11;      /* پس‌زمینه خیلی تیره */
-    --color-surface: #111418;         /* رنگ کارت‌ها */
-    
-    --color-text: #E5E7EB;            /* متن سفید مایل به خاکستری */
-    --color-text-muted: #9CA3AF;      /* متن کم‌رنگ */
-    
-    --color-border: rgba(59,130,246,0.15); /* بوردر محو */
-    --color-purple-fade: rgba(109, 40, 217,0.25);
-    
+
+    --color-background: #0B0E11;
+    /* پس‌زمینه خیلی تیره */
+    --color-surface: #111418;
+    /* رنگ کارت‌ها */
+
+    --color-text: #E5E7EB;
+    /* متن سفید مایل به خاکستری */
+    --color-text-muted: #9CA3AF;
+    /* متن کم‌رنگ */
+
+    --color-border: rgba(59, 130, 246, 0.15);
+    /* بوردر محو */
+    --color-purple-fade: rgba(109, 40, 217, 0.25);
+
     /* متغیرهای کمکی برای سوییچ و فرم‌ها */
     --color-error: #F2B8B5;
     --color--success: #155724;
+
+    /* رنگ‌های اضافی برای Status و Shadow */
+    --color-success: #10B981;
+    --color-warning: #FBBF24;
+    --color-completed: #2ecc71;
+    --color-pending: #f39c12;
+    --color-white: #FFFFFF;
+    --color-dark: #0f172a;
+    --color-slate-text: #64748b;
+    --color-overlay: rgba(0, 0, 0, 0.1);
+    --color-overlay-medium: rgba(0, 0, 0, 0.2);
+    --color-overlay-dark: rgba(0, 0, 0, 0.3);
+    --color-overlay-darker: rgba(0, 0, 0, 0.4);
+    --color-overlay-darkest: rgba(0, 0, 0, 0.6);
+    --color-border-light: #e2e8f0;
+    --color-border-lighter: #cbd5e1;
+    --color-surface-light: #f8fafc;
 }
 
 /* --- تم روشن (Light Mode) --- */
 body.light-mode {
-    --color-primary: #2563EB;         /* آبی کمی تیره‌تر برای خوانایی روی سفید */
+    --color-primary: #2563EB;
+    /* آبی کمی تیره‌تر برای خوانایی روی سفید */
     --color-on-primary: #FFFFFF;
-    
-    --color-background: #F3F4F6;      /* خاکستری خیلی روشن */
-    --color-surface: #FFFFFF;         /* کارت‌ها کاملاً سفید */
-    
-    --color-text: #111827;            /* متن تقریباً مشکی */
-    --color-text-muted: #6B7280;      /* خاکستری متوسط */
-    
-    --color-border: #E5E7EB;          /* خطوط جداکننده طوسی روشن */
-    --color-purple-fade: rgba(109, 40, 217,0.1);
+
+    --color-background: #F3F4F6;
+    /* خاکستری خیلی روشن */
+    --color-surface: #FFFFFF;
+    /* کارت‌ها کاملاً سفید */
+
+    --color-text: #111827;
+    /* متن تقریباً مشکی */
+    --color-text-muted: #6B7280;
+    /* خاکستری متوسط */
+
+    --color-border: #E5E7EB;
+    /* خطوط جداکننده طوسی روشن */
+    --color-purple-fade: rgba(109, 40, 217, 0.1);
+
+    /* رنگ‌های اضافی برای Light Mode */
+    --color-white: #FFFFFF;
+    --color-dark: #1a1a1b;
+    --color-slate-text: #6B7280;
+    --color-overlay: rgba(0, 0, 0, 0.02);
+    --color-overlay-medium: rgba(0, 0, 0, 0.08);
+    --color-overlay-dark: rgba(0, 0, 0, 0.1);
+    --color-border-light: #e2e8f0;
+    --color-border-lighter: #cbd5e1;
+    --color-surface-light: #f8fafc;
+    --color-success: #10B981;
+    --color-warning: #FBBF24;
+    --color-completed: #2ecc71;
+    --color-pending: #f39c12;
 }
