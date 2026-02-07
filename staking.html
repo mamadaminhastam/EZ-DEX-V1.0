@@ -38,16 +38,15 @@
         <h2>Staking</h2>
 
         <div class="balance-box">
-            <span>Available Margin To Stake</span>
-            <strong>0 EZD</strong>
+            <span>Total Staked </span>
+           <span id="staked-balance">0 EZD</span> 
         </div>
-
         <div class="m3-textfield">
             <input type="number" id="stake-amount" placeholder=" " required>
             <label for="stake-amount">Stake amount</label>
         </div>
-
-        <button class="btn-primary-sm full-width">Stake</button>
+        <div id="toast-container"></div>
+        <button id="stake-btn" class="btn-primary-sm full-width">Stake</button>
 
         <hr class="divider">
 
@@ -58,7 +57,7 @@
             <label for="unstake-amount">Amount to Unstake</label>
         </div>
 
-        <button class="btn-primary-sm full-width">Unstake</button>
+        <button id="unstake-btn" class="btn-primary-sm full-width">Unstake</button>
 
     </div>
 
@@ -70,5 +69,6 @@
     </div>
  </main>
  <script src="main/theme.js"></script>
+ <script src="staking.js"></script>
 </body>
 </html>

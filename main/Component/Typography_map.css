@@ -53,10 +53,3 @@ h6 {
     font-size: var(--md-sys-typescale-title-small-size);
 }
 
-/* دکمه‌ها */
-button,
-.btn-primary-sm {
-    font-size: var(--md-sys-typescale-label-large-size);
-    font-weight: var(--md-sys-typescale-label-large-weight);
-    letter-spacing: var(--md-sys-typescale-label-large-tracking);
-}

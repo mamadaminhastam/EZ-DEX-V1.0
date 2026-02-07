@@ -180,8 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
         swapBtn.addEventListener('click', () => {
             const amount = amountFromInput.value;
             if (amount === "" || amount <= 0) {
-                alert("Please enter a valid amount");
+                showToast("لطفاً یک مقدار معتبر برای جابجایی وارد کنید", "error");
                 return;
+                
+                
+            
             }
             //ساخت شناسنامه تراکنش     
             const now = new Date();
@@ -214,32 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // initial compute if value exists
     updateAmountTo();
 
-                try {
-                const justRegistered = sessionStorage.getItem('justRegistered');
-                const user = sessionStorage.getItem('registeredUser');
-                if (justRegistered === 'true') {
-                    // create a small banner above main
-                    const banner = document.createElement('div');
-                    banner.className = 'register-success-banner';
-                    banner.style.position = 'relative';
-                    banner.style.zIndex = '3';
-                    banner.style.maxWidth = '1100px';
-                    banner.style.margin = '12px auto';
-                    banner.style.padding = '10px 14px';
-                    banner.style.borderRadius = '8px';
-                    banner.style.background = --color-background;
-                    banner.style.color = 'var(--color-text)';
-                    banner.style.textAlign = 'center';
-                    banner.innerText = (user ? user + '، ' : '') + 'ثبت نام با موفقیت انجام شد. خوش آمدی!';
-                    const main = document.querySelector('main.container');
-                    if (main) main.parentElement.insertBefore(banner, main);
-                    // remove flag so it doesn't show again
-                    sessionStorage.removeItem('justRegistered');
-                    sessionStorage.removeItem('registeredUser');
-                    // auto-hide after 4s
-                    setTimeout(() => banner.remove(), 4000);
-                }
-            } catch (e) { }
+
   
     
 
@@ -339,4 +317,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTickerPrices();
     // هر ۶۰ ثانیه آپدیت کن تا تداخل انیمیشن پیش نیاید
     setInterval(updateTickerPrices, 240000);
+
+    function showToast(message, type = 'success') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerText = message;
+    
+    container.appendChild(toast);
+    setTimeout(() => { toast.remove(); }, 3000);
+}
 });   

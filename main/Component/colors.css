@@ -77,4 +77,5 @@ body.light-mode {
     --color-warning: #FBBF24;
     --color-completed: #2ecc71;
     --color-pending: #f39c12;
+    --color-red :#ef4444;
 }

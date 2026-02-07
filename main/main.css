@@ -16,6 +16,7 @@
 @import url("Component/badge.css");
 
 /* ۴. لایه کامپوننت‌های پیچیده */
+@import url("Component/toast.css"); 
 @import url("Component/CheckBox_RadioButton.css"); /* طبق تکلیف ۲ */
 @import url("Component/table.css");
 @import url("Component/navbar.css");
